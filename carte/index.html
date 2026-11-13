@@ -1,39 +1,53 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>fx.</title><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#07040B">
-<link rel="icon" href="/favicon.ico">
+<title>François-Xavier Le Gal · fx.</title><meta name="robots" content="noindex"><meta name="theme-color" content="#07040B">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/icone-app-180.png">
 <style>
 @font-face{font-family:"Outfit";src:url(/assets/fonts/Outfit-Regular.ttf) format("truetype");font-display:swap}
 @font-face{font-family:"Outfit";font-weight:700;src:url(/assets/fonts/Outfit-Bold.ttf) format("truetype");font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100%;background:#07040B;color:#F6F2FA;font-family:"Outfit",system-ui,sans-serif}
-body{display:grid;place-items:center;min-height:100vh;padding:24px 16px;background:radial-gradient(700px 560px at 92% 4%,rgba(96,40,190,.30),transparent 62%),radial-gradient(700px 520px at 0% 100%,rgba(84,44,180,.22),transparent 62%),#07040B}
-form{width:100%;max-width:380px;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:32px 26px}
-img{height:34px;width:auto;margin-bottom:28px}
-h1{font-size:24px;letter-spacing:-.02em;margin-bottom:6px}
-p{color:#B9AFC6;font-size:15px;margin-bottom:20px}
-input{width:100%;font:inherit;font-size:16px;color:#F6F2FA;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 14px;outline:none}
-input:focus{border-color:#B8A6FF}
-button{margin-top:14px;width:100%;border:0;border-radius:999px;padding:14px;font:inherit;font-weight:700;font-size:17px;color:#fff;background:linear-gradient(120deg,#33248F,#5E1A7A 48%,#7E1232);cursor:pointer}
-#e{display:none;margin-top:12px;font-size:14px;color:#E4DCEE}
-</style></head><body>
-<form id="f"><img src="/assets/logo/fx-logo.svg" alt="fx."><h1>Site en préparation</h1><p>Accès réservé. Entrez le mot de passe.</p>
-<input type="password" id="pw" autocomplete="current-password" aria-label="Mot de passe" placeholder="Mot de passe" autofocus>
-<button type="submit">Entrer</button><div id="e" role="alert">Mot de passe incorrect.</div><div id="h" role="alert" style="display:none;margin-top:12px;font-size:14px;color:#E4DCEE">Cette page doit être ouverte en https : <a id="hl" style="color:#B8A6FF" href="#">https</a></div></form>
+body{min-height:100vh;padding:24px 16px 40px;background:radial-gradient(700px 560px at 92% 4%,rgba(96,40,190,.30),transparent 62%),radial-gradient(700px 520px at 0% 100%,rgba(84,44,180,.22),transparent 62%),#07040B}
+.w{max-width:420px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+header img{height:30px;width:auto}
+.lang{font-weight:700;font-size:14px;color:#B8A6FF;background:none;border:0;cursor:pointer;font-family:inherit}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:28px 22px;text-align:center}
+.ph{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid rgba(184,166,255,.5);margin-bottom:16px}
+h1{font-size:26px;letter-spacing:-.02em;line-height:1.15}
+.role{color:#B8A6FF;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+.pitch{color:#B9AFC6;font-size:15px;line-height:1.5;margin:14px 0 22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border-radius:999px;padding:14px;font-weight:700;font-size:17px;text-decoration:none;margin-top:12px}
+.p{color:#fff;background:linear-gradient(120deg,#33248F,#5E1A7A 48%,#7E1232)}
+.s{color:#F6F2FA;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04)}
+.btn img{width:20px;height:20px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.links a{color:#E4DCEE;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:11px 8px;background:rgba(255,255,255,.03)}
+.links a b{display:block;color:#B8A6FF;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+</style></head>
+<body><div class="w">
+<header><a href="/" data-h-fr="/" data-h-en="/en/" aria-label="Accueil"><img src="/assets/logo/fx-logo.svg" alt="fx."></a><button class="lang" id="lg" type="button">EN</button></header>
+<div class="card">
+<img class="ph" src="/assets/img/fx-portrait.jpg" alt="François-Xavier Le Gal">
+<h1>François-Xavier Le&nbsp;Gal</h1>
+<div class="role" data-fr="COO à temps partagé" data-en="Fractional COO">COO à temps partagé</div>
+<p class="pitch" data-fr="J’aide les PME tech et de services B2B à faire tourner leurs opérations, leur vente et l’IA en production." data-en="I help B2B tech and services SMEs run their operations, sales and AI in production.">J’aide les PME tech et de services B2B à faire tourner leurs opérations, leur vente et l’IA en production.</p>
+<a class="btn p" id="deck" href="/deck/?src=wallet" data-h-fr="/deck/?src=wallet" data-h-en="/en/deck/?src=wallet"><img src="/assets/pictos/document-text.svg" alt=""><span data-fr="Recevoir l’offre en PDF" data-en="Get the brochure (PDF)">Recevoir l’offre en PDF</span></a>
+<a class="btn s" href="/assets/fx-le-gal.vcf" download="Francois-Xavier-Le-Gal.vcf"><img src="/assets/pictos/users-group-two-rounded.svg" alt=""><span data-fr="Enregistrer le contact" data-en="Save contact">Enregistrer le contact</span></a>
+<div class="links">
+<a href="mailto:fx@fxlegal.fr"><b data-fr="Mail" data-en="Email">Mail</b>fx@fxlegal.fr</a>
+<a href="tel:+33680598485"><b data-fr="Téléphone" data-en="Phone">Téléphone</b>06 80 59 84 85</a>
+<a href="https://www.linkedin.com/in/fxlegal" target="_blank" rel="noopener"><b>LinkedIn</b>/in/fxlegal</a>
+<a href="https://calendar.app.google/ik41pcP1CtoXp9d7A" target="_blank" rel="noopener"><b data-fr="Échanger" data-en="Talk">Échanger</b><span data-fr="Réserver 30 min" data-en="Book 30 min">Réserver 30 min</span></a>
+</div></div></div>
 <script>
-const D={"s": "v6+ho5SLZHu7lqbSpiCzuQ==", "v": "CTySJaePRQbBa2Ie", "c": "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", "i": 600000};
-const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
-async function open_(pw){
-  const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
-  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b(D.s),iterations:D.i,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['decrypt']);
-  const html=new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:b(D.v)},key,b(D.c)));
-  try{sessionStorage.setItem('fxpw',pw)}catch(x){}
-  document.open();document.write(html);document.close();
-}
-if(!window.crypto||!crypto.subtle){const h=document.getElementById('h');h.style.display='block';
-  const l=document.getElementById('hl');l.href='https://'+location.host+location.pathname+location.search;l.textContent=l.href;}
-document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();if(!window.crypto||!crypto.subtle)return;
-  open_(document.getElementById('pw').value).catch(()=>{document.getElementById('e').style.display='block'});});
-let s=null;try{s=sessionStorage.getItem('fxpw')}catch(x){}
-if(s)open_(s).catch(()=>{});
+(function(){
+ function set(l){document.documentElement.lang=l;
+  document.querySelectorAll('[data-fr]').forEach(function(e){e.textContent=e.getAttribute('data-'+l)});
+  document.querySelectorAll('[data-h-fr]').forEach(function(e){e.setAttribute('href',e.getAttribute('data-h-'+l))});
+  document.getElementById('lg').textContent=l==='fr'?'EN':'FR';}
+ var q=new URLSearchParams(location.search).get('lang');
+ var l=q==='en'||q==='fr'?q:((navigator.language||'fr').toLowerCase().indexOf('fr')===0?'fr':'en');
+ set(l);document.getElementById('lg').addEventListener('click',function(){set(document.documentElement.lang==='fr'?'en':'fr')});
+})();
 </script></body></html>
