@@ -33,7 +33,7 @@ details.ann{margin-top:10px;border:1px solid rgba(255,255,255,.1);border-radius:
 details.ann summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:700;font-size:15px;display:flex;justify-content:space-between}
 details.ann summary:after{content:"+";color:#B8A6FF}details.ann[open] summary:after{content:"–"}
 details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,255,.07);color:#E4DCEE;text-decoration:none;font-size:14px}
-</style><script src="/assets/consent.js" defer></script>
+</style>
 </head>
 <body><div class="w">
 <header><a href="/" data-h-fr="/" data-h-en="/en/" aria-label="Accueil"><img src="/assets/logo/fx-logo.svg" alt="fx."></a><button class="lang" id="lg" type="button">EN</button></header>
@@ -64,6 +64,9 @@ details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,
   document.getElementById('lg').textContent=l==='fr'?'EN':'FR';}
  var q=new URLSearchParams(location.search).get('lang');
  var l=q==='en'||q==='fr'?q:((navigator.language||'fr').toLowerCase().indexOf('fr')===0?'fr':'en');
+ /* Comptage sans cookie ni identifiant : une ligne dans l'onglet « Visites » du CRM. */
+ try{var sr=(new URLSearchParams(location.search).get('src')||'qr').slice(0,40).replace(/[^\w-]/g,'');
+  new Image().src='https://script.google.com/macros/s/AKfycbwdddYYDbGJyHZjcldpZf21HN1JpkNsdoru0yGUDDjxxl5FdFuUmSDpTWBEpRS5LJSJ2w/exec?hit=carte&src='+sr+'&lang='+l+'&t='+Date.now();}catch(x){}
  set(l);document.getElementById('lg').addEventListener('click',function(){set(document.documentElement.lang==='fr'?'en':'fr')});
 })();
 </script></body></html>

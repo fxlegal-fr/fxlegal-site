@@ -99,16 +99,16 @@ footer a{color:var(--foot)}
       <h1>Vos opérations et votre IA, <span class="grad">pilotées jusqu’en production</span></h1>
       <p class="lead">Je prends en main vos opérations, votre vente, votre tech et vos projets IA, quelques jours par mois. Laissez votre adresse : je vous envoie mon offre en PDF, dans la version faite pour votre entreprise.</p>
       <ul class="inside">
-        <li><span class="ic"><img src="/assets/pictos/case-round.svg" alt=""></span>Mes trois formats d’intervention</li>
+        <li><span class="ic"><img src="/assets/pictos/case-round.svg" alt=""></span>Mes formats d’intervention</li>
         <li><span class="ic"><img src="/assets/pictos/document-text.svg" alt=""></span>Des cas concrets, chiffres à l’appui</li>
-        <li><span class="ic"><img src="/assets/pictos/calendar.svg" alt=""></span>Comment on démarre, en 3 semaines</li>
+        <li><span class="ic"><img src="/assets/pictos/calendar.svg" alt=""></span>Comment on démarre : une proposition écrite sous 48 heures</li>
       </ul>
     </section>
 
     <section class="card" aria-live="polite">
       <form id="f" novalidate>
         <h2>Recevoir l’offre</h2>
-        <p class="sub">Un PDF d’une trentaine de pages, par mail.</p>
+        <p class="sub">Un PDF d’une douzaine de pages et ses trois annexes, par mail.</p>
 
         <div class="row">
           <div class="f"><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" autocomplete="given-name" required maxlength="80"></div>
@@ -195,6 +195,7 @@ footer a{color:var(--foot)}
   });
 })();
 </script>
-<script>(function(){var p=new URLSearchParams(location.search).get("profil");if(["PME","ETI","Autre"].indexOf(p)>=0){var r=document.querySelector('input[name="profil"][value="'+p+'"]');if(r){r.checked=true;r.dispatchEvent(new Event("change",{bubbles:true}));}}})();</script>
+<script>(function(){var p=new URLSearchParams(location.search).get("profil");if(["PME","ETI","Autre"].indexOf(p)>=0){var r=document.querySelector('input[name="profil"][value="'+p+'"]');if(r){r.checked=true;r.dispatchEvent(new Event("change",{bubbles:true}));}}
+if(p==="ETI"){var q=function(s){return document.querySelector(s)};q(".label").textContent="Directions IT, numériques et marketing d’ETI";q("h1").innerHTML="Un pair à vos côtés, <span class=\"grad\">pas un cabinet de plus</span>";q(".lead").textContent="J’interviens aux côtés des directions IT, numériques et marketing pour arbitrer, livrer vos chantiers et mettre l’IA en production. Laissez votre adresse : je vous envoie mon offre en PDF, dans sa version ETI.";}})();</script>
 </body>
 </html>
