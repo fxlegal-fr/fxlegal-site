@@ -6,9 +6,9 @@
 @font-face{font-family:"Outfit";src:url(/assets/fonts/Outfit-Regular.ttf) format("truetype");font-display:swap}
 @font-face{font-family:"Outfit";font-weight:700;src:url(/assets/fonts/Outfit-Bold.ttf) format("truetype");font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--x:clamp(0px,calc((100vh - 600px)/9),18px)}@supports(height:100svh){:root{--x:clamp(0px,calc((100svh - 600px)/9),18px)}}
+:root{--x:clamp(0px,calc((100vh - 612px)/9),18px)}@supports(height:100svh){:root{--x:clamp(0px,calc((100svh - 612px)/9),18px)}}
 html,body{min-height:100%;background:#07040B;color:#F6F2FA;font-family:"Outfit",system-ui,sans-serif}
-body{min-height:100vh;padding:calc(14px + var(--x)*.6) 14px 12px;background:radial-gradient(700px 560px at 92% 4%,rgba(96,40,190,.30),transparent 62%),radial-gradient(700px 520px at 0% 100%,rgba(84,44,180,.22),transparent 62%),#07040B}
+body{min-height:100vh;padding:calc(14px + var(--x)*.6) 14px 6px;background:radial-gradient(700px 560px at 92% 4%,rgba(96,40,190,.30),transparent 62%),radial-gradient(700px 520px at 0% 100%,rgba(84,44,180,.22),transparent 62%),#07040B}
 .w{max-width:420px;margin:0 auto}
 header{display:flex;justify-content:space-between;align-items:center;margin-bottom:calc(12px + var(--x)*.8)}
 header img{height:26px;width:auto}
@@ -21,7 +21,8 @@ header img{height:26px;width:auto}
 .ph{width:calc(68px + var(--x)*1.2);height:calc(68px + var(--x)*1.2);flex:none;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid rgba(184,166,255,.5)}
 h1{font-size:calc(22px + var(--x)*.12);letter-spacing:-.02em;line-height:1.15}
 .role{color:#B8A6FF;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:5px}
-.pitch{color:#B9AFC6;font-size:14.5px;line-height:1.45;margin:calc(12px + var(--x)*.9) 0 calc(14px + var(--x)*.9);text-align:left}
+.pitch{color:#B9AFC6;font-size:14.5px;line-height:1.45;margin:calc(12px + var(--x)*.9) 0 10px;text-align:left}
+.ia{display:block;text-align:left;color:#B8A6FF;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px;margin:-4px 0 calc(12px + var(--x)*.9)}
 .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border-radius:999px;padding:calc(12px + var(--x)*.25);font-weight:700;font-size:16px;text-decoration:none;margin-top:calc(10px + var(--x)*.6)}
 .p{color:#fff;background:linear-gradient(120deg,#33248F,#5E1A7A 48%,#7E1232)}
 .s{color:#F6F2FA;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04)}
@@ -49,7 +50,8 @@ details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,
 <div class="id"><img class="ph" src="/assets/img/fx-portrait.jpg" alt="François-Xavier Le Gal">
 <div><h1>François-Xavier Le&nbsp;Gal</h1>
 <div class="role" data-fr="COO à temps partagé" data-en="Fractional COO">COO à temps partagé</div></div></div>
-<p class="pitch" data-fr="J’aide les PME tech et de services B2B à faire tourner leurs opérations, leur vente et l’IA en production." data-en="I help B2B tech and services SMEs run their operations, sales and AI in production.">J’aide les PME tech et de services B2B à faire tourner leurs opérations, leur vente et l’IA en production.</p>
+<p class="pitch" data-fr="Je mets l’IA au travail dans vos opérations : moins de tâches manuelles, des résultats mesurés." data-en="I put AI to work in your operations: less manual work, measured results.">Je mets l’IA au travail dans vos opérations : moins de tâches manuelles, des résultats mesurés.</p>
+<a class="ia" href="/presentation/pme/#5" data-h-fr="/presentation/pme/#5" data-h-en="/en/presentation/pme/#5"><span data-fr="3 exemples d’IA en production" data-en="3 examples of AI in production">3 exemples d’IA en production</span> →</a>
 <div class="choose"><div class="t" data-fr="Découvrir en 2 minutes" data-en="Discover in 2 minutes">Découvrir en 2 minutes</div>
 <div class="pick">
 <a href="/presentation/pme/" data-h-fr="/presentation/pme/" data-h-en="/en/presentation/pme/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="PME" data-en="SME">PME</b><span data-fr="Vous dirigez une PME tech ou de services" data-en="You run a tech or services SME">Vous dirigez une PME tech ou de services</span></a>
