@@ -14,8 +14,8 @@ body{background:radial-gradient(70vmax 60vmax at 95% 0%,rgba(96,40,190,.32),tran
 .top{position:fixed;top:calc(env(safe-area-inset-top) + 22px);left:14px;right:14px;z-index:5;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
 .top img{height:22px}.top #cnt{font-size:12px;color:var(--mut);letter-spacing:.08em}
 .top .tr{display:flex;align-items:center;gap:10px}
-.shr{pointer-events:auto;display:grid;place-items:center;width:34px;height:34px;margin:-6px 0;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--lav);cursor:pointer;padding:0}
-button.btn{font-family:inherit;cursor:pointer;width:100%}
+.shr{-webkit-appearance:none;appearance:none;pointer-events:auto;display:grid;place-items:center;width:34px;height:34px;margin:-6px 0;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--lav);cursor:pointer;padding:0}
+button.btn{-webkit-appearance:none;appearance:none;font-family:inherit;cursor:pointer;width:100%}
 .btn svg{width:20px;height:20px;flex:none}
 .toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 52px);transform:translateX(-50%);z-index:9;background:#F6F2FA;color:#07040B;font-weight:700;font-size:14px;border-radius:999px;padding:9px 16px;opacity:0;transition:opacity .25s;pointer-events:none}.toast.on{opacity:1}
 /* Pile de cartes */
