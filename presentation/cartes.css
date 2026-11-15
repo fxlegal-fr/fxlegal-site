@@ -71,3 +71,8 @@ h2{font-size:29px;line-height:1.1;letter-spacing:-.02em;margin-top:10px}
   .card.prev{transform:translateX(-30%) scale(.96);opacity:0}.card:not(.cur):not(.prev){transform:translateX(30%) scale(.96)}
   .card.next1{opacity:0}
 }
+/* logos employeurs : priment sur la taille des pictos de .it img */
+.it .logos{gap:18px;margin-top:10px}
+.it .logos img{width:auto;height:28px;max-width:150px;object-fit:contain}
+.it .logos img.w{height:30px;margin:0}
+@media(min-width:900px){.it .logos img{height:clamp(26px,2.3vw,40px);max-width:13vw}.it .logos img.w{height:clamp(28px,2.5vw,42px)}}
