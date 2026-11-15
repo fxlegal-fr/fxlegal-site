@@ -16,4 +16,10 @@
  document.addEventListener('touchend',function(e){if(x0===null)return;var c=cards[i];c.classList.remove('drag');c.style.transform='';
   if(Math.abs(dx)>60)go(dx<0?1:-1);else if(Math.abs(dx)<8){go(x0>innerWidth*.33?1:-1)}x0=null});
  show();
+ /* Ajuste la taille du texte de chaque carte pour que rien ne soit coupé (petits téléphones). */
+ function fit(){cards.forEach(function(c){c.style.fontSize='';c.classList.remove('fit-min');var f=16;
+   while(c.scrollHeight>c.clientHeight+1&&f>11.5){f-=.5;c.style.fontSize=f+'px'}
+   if(c.scrollHeight>c.clientHeight+1)c.classList.add('fit-min');});}
+ fit();addEventListener('resize',fit);addEventListener('load',fit);
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
 })();
