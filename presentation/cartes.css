@@ -12,7 +12,12 @@ body{background:radial-gradient(70vmax 60vmax at 95% 0%,rgba(96,40,190,.32),tran
 .bars i b{display:block;height:100%;width:0;background:#fff;transition:width .3s}
 .bars i.on b{width:100%}
 .top{position:fixed;top:calc(env(safe-area-inset-top) + 22px);left:14px;right:14px;z-index:5;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
-.top img{height:22px}.top span{font-size:12px;color:var(--mut);letter-spacing:.08em}
+.top img{height:22px}.top #cnt{font-size:12px;color:var(--mut);letter-spacing:.08em}
+.top .tr{display:flex;align-items:center;gap:10px}
+.shr{pointer-events:auto;display:grid;place-items:center;width:34px;height:34px;margin:-6px 0;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--lav);cursor:pointer;padding:0}
+button.btn{font-family:inherit;cursor:pointer;width:100%}
+.btn svg{width:20px;height:20px;flex:none}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 52px);transform:translateX(-50%);z-index:9;background:#F6F2FA;color:#07040B;font-weight:700;font-size:14px;border-radius:999px;padding:9px 16px;opacity:0;transition:opacity .25s;pointer-events:none}.toast.on{opacity:1}
 /* Pile de cartes */
 .deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top) + 56px) 14px calc(env(safe-area-inset-bottom) + 64px)}
 .card{position:absolute;inset:calc(env(safe-area-inset-top) + 56px) 14px calc(env(safe-area-inset-bottom) + 64px);border-radius:28px;padding:1.75em 1.375em;font-size:16px;display:flex;flex-direction:column;
@@ -59,13 +64,14 @@ h2{font-size:1.8125em;line-height:1.1;letter-spacing:-.02em;margin-top:.35em}
   .it{padding:1.6vw 1.8vw;gap:1.4vw;border-radius:22px}.it img{width:2.6vw;height:2.6vw}.it b{font-size:clamp(18px,1.85vw,30px)}.it p{font-size:clamp(15px,1.4vw,22px)}.yr{font-size:clamp(13px,1.1vw,17px)}.logos img{height:2vw;max-width:9vw}
   .num{font-size:clamp(40px,4.2vw,68px);min-width:clamp(110px,11vw,180px)}
   .q{font-size:clamp(20px,2vw,32px)}.who{font-size:clamp(14px,1.2vw,18px)}.who b{font-size:clamp(16px,1.4vw,21px)}
-  .btn{font-size:clamp(17px,1.6vw,24px);padding:1.4vw}.btn img{width:1.8vw;height:1.8vw}
+  .btn{font-size:clamp(17px,1.6vw,24px);padding:1.4vw}.btn img,.btn svg{width:1.8vw;height:1.8vw}
   .cover{display:block}.cover .ph{left:auto;width:46%;background-position:50% 20%}
   .cover .ph:after{background:linear-gradient(90deg,#0b0712 0%,rgba(11,7,18,0) 40%)}
   .cover .tx{position:absolute;left:6%;bottom:12%;width:50%;padding:0}
   .bars{left:50%;right:auto;transform:translateX(-50%);width:min(60vw,700px);padding-top:22px}
   .top{top:auto;bottom:22px;left:32px;right:32px}
   .hint{display:none}
+  .toast{bottom:78px}
   .nav{display:flex;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);gap:10px;z-index:6}
   .nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--fg);font:700 18px "Outfit";cursor:pointer}
   .card.prev{transform:translateX(-30%) scale(.96);opacity:0}.card:not(.cur):not(.prev){transform:translateX(30%) scale(.96)}
