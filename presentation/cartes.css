@@ -3,7 +3,7 @@
 @font-face{font-family:"Outfit";font-weight:700;src:url(/assets/fonts/Outfit-Bold.ttf) format("truetype");font-display:swap}
 :root{--bg:#07040B;--fg:#F6F2FA;--mut:#B9AFC6;--lav:#B8A6FF;--line:rgba(255,255,255,.12);--grad:linear-gradient(120deg,#8E7BFF,#C04BD0 55%,#F0587A)}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--fg);font-family:"Outfit",system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;overscroll-behavior:none;background:var(--bg);color:var(--fg);font-family:"Outfit",system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
 body{background:radial-gradient(70vmax 60vmax at 95% 0%,rgba(96,40,190,.32),transparent 60%),radial-gradient(70vmax 55vmax at 0% 100%,rgba(84,44,180,.22),transparent 62%),var(--bg)}
 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* Barre de progression façon stories */
@@ -85,3 +85,7 @@ h2{font-size:1.8125em;line-height:1.1;letter-spacing:-.02em;margin-top:.35em}
 
 /* dernier recours sur très petit écran : la carte défile au lieu de couper son contenu */
 .card.fit-min{overflow-y:auto;scrollbar-width:none}.card.fit-min::-webkit-scrollbar{display:none}
+
+/* invitation à faire glisser : la première carte s'écarte une fois, la suivante apparaît derrière */
+@keyframes nudge{0%,100%{transform:none}35%{transform:translateX(-17%) rotate(-3.5deg)}55%{transform:translateX(-17%) rotate(-3.5deg)}}
+.card.cur.nudge{animation:nudge 1.5s cubic-bezier(.3,.7,.2,1) 1}
