@@ -11,11 +11,18 @@
  document.addEventListener('keydown',function(e){if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(e.key)>=0){e.preventDefault();go(1)}if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key)>=0){e.preventDefault();go(-1)}});
  document.getElementById('nx').onclick=function(){go(1)};document.getElementById('pv').onclick=function(){go(-1)};
  var x0=null,y0=0,dx=0;
- document.addEventListener('touchstart',function(e){if(e.target.closest('a'))return;x0=e.touches[0].clientX;y0=e.touches[0].clientY;dx=0;cards[i].classList.add('drag')},{passive:true});
+ document.addEventListener('touchstart',function(e){if(e.target.closest('a,button'))return;x0=e.touches[0].clientX;y0=e.touches[0].clientY;dx=0;cards[i].classList.add('drag')},{passive:true});
  document.addEventListener('touchmove',function(e){if(x0===null)return;dx=e.touches[0].clientX-x0;cards[i].style.transform='translateX('+dx+'px) rotate('+(dx/40)+'deg)'},{passive:true});
  document.addEventListener('touchend',function(e){if(x0===null)return;var c=cards[i];c.classList.remove('drag');c.style.transform='';
   if(Math.abs(dx)>60)go(dx<0?1:-1);else if(Math.abs(dx)<8){go(x0>innerWidth*.33?1:-1)}x0=null});
  show();
+ /* Partage : menu de partage du téléphone, sinon copie du lien. Le lien ouvre la présentation à la première carte. */
+ var toast=document.body.appendChild(document.createElement('div'));toast.className='toast';
+ function partager(b){var u=location.origin+location.pathname,d={title:document.title,url:u};
+  if(navigator.share){navigator.share(d).catch(function(){});return}
+  var fin=function(){toast.textContent=b.getAttribute('data-copied')||'OK';toast.classList.add('on');setTimeout(function(){toast.classList.remove('on')},1800)};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(fin,function(){prompt('',u)});else prompt('',u);}
+ [].forEach.call(document.querySelectorAll('[data-share]'),function(b){b.addEventListener('click',function(e){e.stopPropagation();partager(b)})});
  /* Comptage sans cookie ni identifiant : quelle présentation est ouverte (onglet « Visites » du CRM). */
  try{var m=location.pathname.match(/presentation\/(pme|eti)/);
   if(m)new Image().src='https://script.google.com/macros/s/AKfycbwdddYYDbGJyHZjcldpZf21HN1JpkNsdoru0yGUDDjxxl5FdFuUmSDpTWBEpRS5LJSJ2w/exec?hit=presentation-'+m[1]+'&src=carte&lang='+(document.documentElement.lang||'fr').slice(0,2)+'&t='+Date.now();}catch(x){}
