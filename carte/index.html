@@ -7,31 +7,32 @@
 @font-face{font-family:"Outfit";font-weight:700;src:url(/assets/fonts/Outfit-Bold.ttf) format("truetype");font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100%;background:#07040B;color:#F6F2FA;font-family:"Outfit",system-ui,sans-serif}
-body{min-height:100vh;padding:24px 16px 40px;background:radial-gradient(700px 560px at 92% 4%,rgba(96,40,190,.30),transparent 62%),radial-gradient(700px 520px at 0% 100%,rgba(84,44,180,.22),transparent 62%),#07040B}
+body{min-height:100vh;padding:14px 14px 20px;background:radial-gradient(700px 560px at 92% 4%,rgba(96,40,190,.30),transparent 62%),radial-gradient(700px 520px at 0% 100%,rgba(84,44,180,.22),transparent 62%),#07040B}
 .w{max-width:420px;margin:0 auto}
-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-header img{height:30px;width:auto}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+header img{height:26px;width:auto}
 .hr{display:flex;align-items:center;gap:14px}
 .shr{-webkit-appearance:none;appearance:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#B8A6FF;cursor:pointer;padding:0}
 .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#F6F2FA;color:#07040B;font-weight:700;font-size:14px;border-radius:999px;padding:9px 16px;opacity:0;transition:opacity .25s;pointer-events:none}.toast.on{opacity:1}
 .lang{font-weight:700;font-size:14px;color:#B8A6FF;background:none;border:0;cursor:pointer;font-family:inherit}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:28px 22px;text-align:center}
-.ph{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid rgba(184,166,255,.5);margin-bottom:16px}
-h1{font-size:26px;letter-spacing:-.02em;line-height:1.15}
-.role{color:#B8A6FF;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
-.pitch{color:#B9AFC6;font-size:15px;line-height:1.5;margin:14px 0 22px}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border-radius:999px;padding:14px;font-weight:700;font-size:17px;text-decoration:none;margin-top:12px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:18px 18px 16px;text-align:center}
+.id{display:flex;align-items:center;gap:14px;text-align:left}
+.ph{width:68px;height:68px;flex:none;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid rgba(184,166,255,.5)}
+h1{font-size:22px;letter-spacing:-.02em;line-height:1.15}
+.role{color:#B8A6FF;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:5px}
+.pitch{color:#B9AFC6;font-size:14.5px;line-height:1.4;margin:12px 0 14px;text-align:left}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border-radius:999px;padding:12px;font-weight:700;font-size:16px;text-decoration:none;margin-top:10px}
 .p{color:#fff;background:linear-gradient(120deg,#33248F,#5E1A7A 48%,#7E1232)}
 .s{color:#F6F2FA;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04)}
 .btn img{width:20px;height:20px}
-.links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.links a{color:#E4DCEE;text-decoration:none;font-size:14px;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:11px 8px;background:rgba(255,255,255,.03)}
-.links a b{display:block;color:#B8A6FF;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.links{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.links a{display:flex;flex-direction:column;align-items:center;gap:5px;color:#E4DCEE;text-decoration:none;font-size:12px;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:10px 2px 8px;background:rgba(255,255,255,.03)}
+.links a svg,.links a img{width:22px;height:22px;color:#B8A6FF}
 .choose{margin:4px 0 6px;text-align:left}
-.choose .t{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B8A6FF;margin:0 0 10px 4px}
+.choose .t{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B8A6FF;margin:0 0 8px 4px}
 .pick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pick a{display:block;text-decoration:none;color:#F6F2FA;border-radius:18px;padding:16px 14px;background:linear-gradient(135deg,rgba(142,123,255,.22),rgba(192,75,208,.12));border:1px solid rgba(184,166,255,.35)}
-.pick a b{display:block;font-size:20px}.pick a span{display:block;color:#B9AFC6;font-size:13px;margin-top:4px;line-height:1.35}
+.pick a{display:block;text-decoration:none;color:#F6F2FA;border-radius:16px;padding:12px 12px;background:linear-gradient(135deg,rgba(142,123,255,.22),rgba(192,75,208,.12));border:1px solid rgba(184,166,255,.35)}
+.pick a b{display:block;font-size:19px}.pick a span{display:block;color:#B9AFC6;font-size:12.5px;margin-top:2px;line-height:1.3}
 details.ann{margin-top:10px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.03)}
 details.ann summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:700;font-size:15px;display:flex;justify-content:space-between}
 details.ann summary:after{content:"+";color:#B8A6FF}details.ann[open] summary:after{content:"–"}
@@ -41,9 +42,9 @@ details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,
 <body><div class="w">
 <header><a href="/" data-h-fr="/" data-h-en="/en/" aria-label="Accueil"><img src="/assets/logo/fx-logo.svg" alt="fx."></a><span class="hr"><button class="shr" id="sh" type="button" aria-label="Partager"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3.5M7.5 7.5 12 3l4.5 4.5M5 12v6.5A2.5 2.5 0 0 0 7.500 21h9a2.5 2.5 0 0 0 2.5-2.5V12"/></svg></button><button class="lang" id="lg" type="button">EN</button></span></header>
 <div class="card">
-<img class="ph" src="/assets/img/fx-portrait.jpg" alt="François-Xavier Le Gal">
-<h1>François-Xavier Le&nbsp;Gal</h1>
-<div class="role" data-fr="COO à temps partagé" data-en="Fractional COO">COO à temps partagé</div>
+<div class="id"><img class="ph" src="/assets/img/fx-portrait.jpg" alt="François-Xavier Le Gal">
+<div><h1>François-Xavier Le&nbsp;Gal</h1>
+<div class="role" data-fr="COO à temps partagé" data-en="Fractional COO">COO à temps partagé</div></div></div>
 <p class="pitch" data-fr="J’aide les PME tech et de services B2B à faire tourner leurs opérations, leur vente et l’IA en production." data-en="I help B2B tech and services SMEs run their operations, sales and AI in production.">J’aide les PME tech et de services B2B à faire tourner leurs opérations, leur vente et l’IA en production.</p>
 <div class="choose"><div class="t" data-fr="Découvrir en 2 minutes" data-en="Discover in 2 minutes">Découvrir en 2 minutes</div>
 <div class="pick">
@@ -54,10 +55,10 @@ details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,
 <a class="btn p" id="deck" href="/deck/?src=wallet" data-h-fr="/deck/?src=wallet" data-h-en="/en/deck/?src=wallet"><img src="/assets/pictos/document-text.svg" alt=""><span data-fr="Recevoir l’offre en PDF" data-en="Get the brochure (PDF)">Recevoir l’offre en PDF</span></a>
 <a class="btn s" href="/assets/fx-le-gal.vcf" download="Francois-Xavier-Le-Gal.vcf"><img src="/assets/pictos/users-group-two-rounded.svg" alt=""><span data-fr="Enregistrer le contact" data-en="Save contact">Enregistrer le contact</span></a>
 <div class="links">
-<a href="mailto:fx@fxlegal.fr"><b data-fr="Mail" data-en="Email">Mail</b>fx@fxlegal.fr</a>
-<a href="tel:+33680598485"><b data-fr="Téléphone" data-en="Phone">Téléphone</b>06 80 59 84 85</a>
-<a href="https://www.linkedin.com/in/fxlegal" target="_blank" rel="noopener"><b>LinkedIn</b>/in/fxlegal</a>
-<a href="https://calendar.app.google/ik41pcP1CtoXp9d7A" target="_blank" rel="noopener"><b data-fr="Échanger" data-en="Talk">Échanger</b><span data-fr="Réserver 30 min" data-en="Book 30 min">Réserver 30 min</span></a>
+<a href="mailto:fx@fxlegal.fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 8 8 5.5L20 8"/></svg><span data-fr="Mail" data-en="Email">Mail</span></a>
+<a href="tel:+33680598485"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.500-2 4 1.500v3a2 2 0 0 1-2.200 2A17 17 0 0 1 4.500 5.700a2 2 0 0 1 2-2.200Z"/></svg><span data-fr="Appeler" data-en="Call">Appeler</span></a>
+<a href="https://www.linkedin.com/in/fxlegal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.500V17M8 7.500v.01M12 17v-3.500a2.250 2.250 0 0 1 4.500 0V17M12 10.500V17"/></svg><span>LinkedIn</span></a>
+<a href="https://calendar.app.google/ik41pcP1CtoXp9d7A" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-fr="RDV 30 min" data-en="Book 30 min">RDV 30 min</span></a>
 </div></div></div>
 <script>
 (function(){
