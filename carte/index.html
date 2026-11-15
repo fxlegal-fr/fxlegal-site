@@ -32,8 +32,11 @@ h1{font-size:calc(22px + var(--x)*.12);letter-spacing:-.02em;line-height:1.15}
 .choose{margin:4px 0 6px;text-align:left}
 .choose .t{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B8A6FF;margin:0 0 calc(8px + var(--x)*.3) 4px}
 .pick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pick a{display:block;text-decoration:none;color:#F6F2FA;border-radius:16px;padding:calc(12px + var(--x)*.35) 12px;background:linear-gradient(135deg,rgba(142,123,255,.22),rgba(192,75,208,.12));border:1px solid rgba(184,166,255,.35)}
-.pick a b{display:block;font-size:19px}.pick a span{display:block;color:#B9AFC6;font-size:12.5px;margin-top:2px;line-height:1.3}
+.pick a{position:relative;display:block;text-decoration:none;color:#F6F2FA;border-radius:16px;padding:calc(12px + var(--x)*.35) 12px;background:linear-gradient(135deg,rgba(142,123,255,.34),rgba(192,75,208,.2));border:1.5px solid rgba(184,166,255,.7);box-shadow:0 6px 18px rgba(94,26,122,.35),inset 0 1px 0 rgba(255,255,255,.14);transition:transform .12s,background .12s;-webkit-tap-highlight-color:transparent}
+.pick a:active{transform:scale(.97);background:linear-gradient(135deg,rgba(142,123,255,.5),rgba(192,75,208,.32))}
+.pick a i{position:absolute;top:calc(10px + var(--x)*.35);right:10px;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#B8A6FF;color:#07040B}
+.pick a i svg{width:15px;height:15px}
+.pick a b{display:block;font-size:19px}.pick a span{display:block;color:#D5CCE2;font-size:12.5px;margin-top:2px;line-height:1.3}
 details.ann{margin-top:10px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.03)}
 details.ann summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:700;font-size:15px;display:flex;justify-content:space-between}
 details.ann summary:after{content:"+";color:#B8A6FF}details.ann[open] summary:after{content:"–"}
@@ -49,8 +52,8 @@ details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,
 <p class="pitch" data-fr="J’aide les PME tech et de services B2B à faire tourner leurs opérations, leur vente et l’IA en production." data-en="I help B2B tech and services SMEs run their operations, sales and AI in production.">J’aide les PME tech et de services B2B à faire tourner leurs opérations, leur vente et l’IA en production.</p>
 <div class="choose"><div class="t" data-fr="Découvrir en 2 minutes" data-en="Discover in 2 minutes">Découvrir en 2 minutes</div>
 <div class="pick">
-<a href="/presentation/pme/" data-h-fr="/presentation/pme/" data-h-en="/en/presentation/pme/"><b data-fr="PME" data-en="SME">PME</b><span data-fr="Je dirige une PME tech ou de services" data-en="I run a tech or services SME">Je dirige une PME tech ou de services</span></a>
-<a href="/presentation/eti/" data-h-fr="/presentation/eti/" data-h-en="/en/presentation/eti/"><b data-fr="ETI" data-en="Mid-size">ETI</b><span data-fr="Je suis en direction IT, digitale ou marketing" data-en="I lead IT, digital or marketing">Je suis en direction IT, digitale ou marketing</span></a>
+<a href="/presentation/pme/" data-h-fr="/presentation/pme/" data-h-en="/en/presentation/pme/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="PME" data-en="SME">PME</b><span data-fr="Je dirige une PME tech ou de services" data-en="I run a tech or services SME">Je dirige une PME tech ou de services</span></a>
+<a href="/presentation/eti/" data-h-fr="/presentation/eti/" data-h-en="/en/presentation/eti/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="ETI" data-en="Mid-size">ETI</b><span data-fr="Je suis en direction IT, digitale ou marketing" data-en="I lead IT, digital or marketing">Je suis en direction IT, digitale ou marketing</span></a>
 </div>
 </div>
 <a class="btn p" id="deck" href="/deck/?src=wallet" data-h-fr="/deck/?src=wallet" data-h-en="/en/deck/?src=wallet"><img src="/assets/pictos/document-text.svg" alt=""><span data-fr="Recevoir l’offre en PDF" data-en="Get the brochure (PDF)">Recevoir l’offre en PDF</span></a>
