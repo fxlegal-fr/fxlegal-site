@@ -48,6 +48,8 @@ details.ann{margin-top:10px;border:1px solid rgba(255,255,255,.1);border-radius:
 details.ann summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:700;font-size:15px;display:flex;justify-content:space-between}
 details.ann summary:after{content:"+";color:#B8A6FF}details.ann[open] summary:after{content:"–"}
 details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,255,.07);color:#E4DCEE;text-decoration:none;font-size:14px}
+.ov{position:fixed;inset:0;z-index:20;display:none;background:#07040B}.ov.on{display:block}.ov iframe{width:100%;height:100%;border:0;display:block;background:#07040B}
+body.ov-on{overflow:hidden}
 </style>
 </head>
 <body><div class="w">
@@ -74,6 +76,7 @@ details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,
 <button type="button" id="qrb" aria-label="QR code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM20 14v.01M14 20v.01M17 20h4v-3"/></svg><span>QR</span></button>
 </div></div></div>
 <div class="qrv" id="qrv" role="dialog" aria-modal="true" aria-label="QR code"><button class="x" type="button" aria-label="Fermer">×</button><svg class="qc" viewBox="-2 -2 33 33" shape-rendering="crispEdges" aria-hidden="true"><path fill="#07040B" d="M0 0h7v1h-7zM10 0h1v1h-1zM14 0h1v1h-1zM19 0h1v1h-1zM22 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h3v1h-3zM13 1h1v1h-1zM17 1h3v1h-3zM22 1h1v1h-1zM28 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM11 2h2v1h-2zM15 2h1v1h-1zM18 2h3v1h-3zM22 2h1v1h-1zM24 2h3v1h-3zM28 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM10 3h4v1h-4zM18 3h3v1h-3zM22 3h1v1h-1zM24 3h3v1h-3zM28 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM8 4h2v1h-2zM11 4h3v1h-3zM16 4h1v1h-1zM18 4h2v1h-2zM22 4h1v1h-1zM24 4h3v1h-3zM28 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h3v1h-3zM14 5h2v1h-2zM17 5h4v1h-4zM22 5h1v1h-1zM28 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h7v1h-7zM11 7h1v1h-1zM16 7h4v1h-4zM0 8h1v1h-1zM2 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM9 8h2v1h-2zM12 8h1v1h-1zM15 8h4v1h-4zM20 8h1v1h-1zM24 8h1v1h-1zM27 8h1v1h-1zM3 9h3v1h-3zM7 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM20 9h3v1h-3zM25 9h1v1h-1zM28 9h1v1h-1zM0 10h5v1h-5zM6 10h2v1h-2zM11 10h1v1h-1zM14 10h1v1h-1zM17 10h1v1h-1zM21 10h4v1h-4zM26 10h3v1h-3zM0 11h1v1h-1zM4 11h2v1h-2zM7 11h2v1h-2zM12 11h4v1h-4zM17 11h2v1h-2zM22 11h1v1h-1zM27 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM4 12h3v1h-3zM8 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM16 12h3v1h-3zM20 12h3v1h-3zM25 12h1v1h-1zM27 12h2v1h-2zM1 13h1v1h-1zM9 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM16 13h1v1h-1zM18 13h1v1h-1zM20 13h3v1h-3zM25 13h1v1h-1zM28 13h1v1h-1zM0 14h1v1h-1zM3 14h1v1h-1zM6 14h1v1h-1zM9 14h1v1h-1zM13 14h1v1h-1zM16 14h2v1h-2zM22 14h1v1h-1zM24 14h2v1h-2zM27 14h2v1h-2zM1 15h1v1h-1zM4 15h1v1h-1zM8 15h5v1h-5zM17 15h2v1h-2zM20 15h1v1h-1zM24 15h2v1h-2zM27 15h1v1h-1zM0 16h1v1h-1zM2 16h3v1h-3zM6 16h7v1h-7zM17 16h1v1h-1zM19 16h4v1h-4zM25 16h1v1h-1zM27 16h2v1h-2zM8 17h2v1h-2zM11 17h3v1h-3zM16 17h3v1h-3zM21 17h2v1h-2zM25 17h2v1h-2zM28 17h1v1h-1zM0 18h1v1h-1zM2 18h1v1h-1zM4 18h4v1h-4zM12 18h1v1h-1zM14 18h1v1h-1zM17 18h2v1h-2zM20 18h2v1h-2zM24 18h1v1h-1zM27 18h2v1h-2zM1 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM10 19h2v1h-2zM13 19h2v1h-2zM17 19h2v1h-2zM21 19h1v1h-1zM23 19h3v1h-3zM27 19h1v1h-1zM0 20h1v1h-1zM3 20h1v1h-1zM6 20h2v1h-2zM10 20h1v1h-1zM14 20h1v1h-1zM16 20h2v1h-2zM20 20h5v1h-5zM8 21h2v1h-2zM14 21h1v1h-1zM16 21h3v1h-3zM20 21h1v1h-1zM24 21h1v1h-1zM26 21h3v1h-3zM0 22h7v1h-7zM10 22h2v1h-2zM13 22h1v1h-1zM17 22h4v1h-4zM22 22h1v1h-1zM24 22h2v1h-2zM27 22h2v1h-2zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM15 23h3v1h-3zM20 23h1v1h-1zM24 23h2v1h-2zM28 23h1v1h-1zM0 24h1v1h-1zM2 24h3v1h-3zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h3v1h-3zM16 24h2v1h-2zM20 24h5v1h-5zM28 24h1v1h-1zM0 25h1v1h-1zM2 25h3v1h-3zM6 25h1v1h-1zM9 25h1v1h-1zM11 25h2v1h-2zM16 25h2v1h-2zM19 25h3v1h-3zM24 25h1v1h-1zM26 25h3v1h-3zM0 26h1v1h-1zM2 26h3v1h-3zM6 26h1v1h-1zM8 26h5v1h-5zM17 26h4v1h-4zM23 26h3v1h-3zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM9 27h1v1h-1zM11 27h2v1h-2zM14 27h7v1h-7zM22 27h3v1h-3zM27 27h1v1h-1zM0 28h7v1h-7zM8 28h1v1h-1zM14 28h2v1h-2zM17 28h4v1h-4zM23 28h2v1h-2zM27 28h2v1h-2z"/></svg><div><b>François-Xavier Le&nbsp;Gal</b><br><span data-fr="Scannez pour ouvrir ma carte" data-en="Scan to open my card">Scannez pour ouvrir ma carte</span></div></div>
+<div class="ov" id="ov"></div>
 <script>
 (function(){
  function set(l){document.documentElement.lang=l;
@@ -96,6 +99,16 @@ details.ann a{display:block;padding:11px 14px;border-top:1px solid rgba(255,255,
  document.getElementById('qrb').addEventListener('click',function(){qv.classList.add('on');try{navigator.wakeLock&&navigator.wakeLock.request('screen').then(function(w){wl=w},function(){})}catch(x){}});
  qv.addEventListener('click',function(){qv.classList.remove('on');if(wl){wl.release().catch(function(){});wl=null}});
  document.addEventListener('keydown',function(e){if(e.key==='Escape')qv.click()});
+ /* Présentations et formulaire ouverts par-dessus la carte : pas de changement de page, « Retour » ou le geste retour ramène à la carte. */
+ var ov=document.getElementById('ov');
+ function ouvrir(u){ov.innerHTML='';var f=document.createElement('iframe');f.src=u;f.title=document.title;f.setAttribute('allow','clipboard-write; web-share');ov.appendChild(f);
+  ov.classList.add('on');document.body.classList.add('ov-on');history.pushState({ov:1},'');f.focus();}
+ function fermer(){ov.classList.remove('on');document.body.classList.remove('ov-on');ov.innerHTML='';}
+ [].forEach.call(document.querySelectorAll('.pick a,#deck'),function(a){a.addEventListener('click',function(e){if(e.metaKey||e.ctrlKey||e.shiftKey)return;e.preventDefault();ouvrir(a.getAttribute('href'))})});
+ /* « Retour » dans la page ouverte : on ferme et on neutralise l'entrée d'historique ajoutée. */
+ addEventListener('message',function(e){if(e.origin===location.origin&&e.data==='fx-fermer'){fermer();if(history.state&&history.state.ov)history.replaceState(null,'')}});
+ /* Geste ou bouton retour du téléphone : ferme la surimpression. */
+ addEventListener('popstate',function(){if(ov.classList.contains('on'))fermer()});
  set(l);document.getElementById('lg').addEventListener('click',function(){set(document.documentElement.lang==='fr'?'en':'fr')});
 })();
 </script></body></html>
