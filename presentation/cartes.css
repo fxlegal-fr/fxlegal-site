@@ -55,18 +55,19 @@ h2{font-size:1.8125em;line-height:1.1;letter-spacing:-.02em;margin-top:.35em}
 .nav{display:none}
 /* Ordinateur ou écran paysage : la même carte devient une slide 16:9 */
 @media (min-aspect-ratio:4/3) and (min-width:900px){
+  :root{--u:min(1vw,1.72vh)}
   .deck{padding:0}
   .card{inset:auto;width:min(88vw,152vh);height:min(49.5vw,85.5vh);padding:5.2% 6%;font-size:16px!important;border-radius:32px;display:grid;grid-template-columns:1fr 1.15fr;grid-template-rows:auto auto auto 1fr;column-gap:5%}
   .card>.k,.card>h1,.card>h2,.card>.lead{grid-column:1}
   .card>.fn{grid-column:1;grid-row:4;align-self:end}
-  .card .body{grid-column:2;grid-row:1 / span 4;margin:auto 0;padding-top:0;gap:1.4vw}
-  h1{font-size:clamp(34px,4.4vw,64px)}h2{font-size:clamp(30px,3.4vw,52px)}
-  .lead{font-size:clamp(16px,1.5vw,22px);max-width:30ch}
-  .k{font-size:clamp(12px,1.1vw,16px)}.lead{margin-top:1.6vw}
-  .it{padding:1.6vw 1.8vw;gap:1.4vw;border-radius:22px}.it img{width:2.6vw;height:2.6vw}.it b{font-size:clamp(18px,1.85vw,30px)}.it p{font-size:clamp(15px,1.4vw,22px)}.yr{font-size:clamp(13px,1.1vw,17px)}.logos img{height:2vw;max-width:9vw}
-  .num{font-size:clamp(40px,4.2vw,68px);min-width:clamp(110px,11vw,180px)}
-  .q{font-size:clamp(20px,2vw,32px)}.who{font-size:clamp(14px,1.2vw,18px)}.who b{font-size:clamp(16px,1.4vw,21px)}
-  .btn{font-size:clamp(17px,1.6vw,24px);padding:1.4vw}.btn img,.btn svg{width:1.8vw;height:1.8vw}
+  .card .body{grid-column:2;grid-row:1 / span 4;margin:auto 0;padding-top:0;gap:calc(var(--u)*1.4)}
+  h1{font-size:clamp(34px,calc(var(--u)*4.4),64px)}h2{font-size:clamp(30px,calc(var(--u)*3.4),52px)}
+  .lead{font-size:clamp(16px,calc(var(--u)*1.5),22px);max-width:30ch}
+  .k{font-size:clamp(12px,calc(var(--u)*1.1),16px)}.lead{margin-top:calc(var(--u)*1.6)}
+  .it{padding:calc(var(--u)*1.6) calc(var(--u)*1.8);gap:calc(var(--u)*1.4);border-radius:22px}.it img{width:calc(var(--u)*2.6);height:calc(var(--u)*2.6)}.it b{font-size:clamp(18px,calc(var(--u)*1.85),30px)}.it p{font-size:clamp(15px,calc(var(--u)*1.4),22px)}.yr{font-size:clamp(13px,calc(var(--u)*1.1),17px)}.logos img{height:calc(var(--u)*2);max-width:calc(var(--u)*9)}
+  .num{font-size:clamp(40px,calc(var(--u)*4.2),68px);min-width:clamp(110px,calc(var(--u)*11),180px)}
+  .q{font-size:clamp(20px,calc(var(--u)*2),32px)}.who{font-size:clamp(14px,calc(var(--u)*1.2),18px)}.who b{font-size:clamp(16px,calc(var(--u)*1.4),21px)}
+  .btn{font-size:clamp(17px,calc(var(--u)*1.6),24px);padding:calc(var(--u)*1.4)}.btn img,.btn svg{width:calc(var(--u)*1.8);height:calc(var(--u)*1.8)}
   .cover{display:block}.cover .ph{left:auto;width:46%;background-position:50% 20%}
   .cover .ph:after{background:linear-gradient(90deg,#0b0712 0%,rgba(11,7,18,0) 40%)}
   .cover .tx{position:absolute;left:6%;bottom:12%;width:50%;padding:0}
@@ -83,7 +84,7 @@ h2{font-size:1.8125em;line-height:1.1;letter-spacing:-.02em;margin-top:.35em}
 .it .logos{gap:1.1em;margin-top:.5em}
 .it .logos img{width:auto;height:1.6em;max-width:9em;object-fit:contain}
 .it .logos img.w{height:1.75em;margin:0}
-@media(min-width:900px){.it .logos img{height:clamp(26px,2.3vw,40px);max-width:13vw}.it .logos img.w{height:clamp(28px,2.5vw,42px)}}
+@media(min-width:900px){.it .logos img{height:clamp(22px,calc(var(--u,1vw)*2.3),40px);max-width:13vw}.it .logos img.w{height:clamp(24px,calc(var(--u,1vw)*2.5),42px)}}
 
 /* dernier recours sur très petit écran : la carte défile au lieu de couper son contenu */
 .card.fit-min{overflow-y:auto;scrollbar-width:none}.card.fit-min::-webkit-scrollbar{display:none}
