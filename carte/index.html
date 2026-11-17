@@ -111,4 +111,4 @@ body.ov-on{overflow:hidden}
  addEventListener('popstate',function(){if(ov.classList.contains('on'))fermer()});
  set(l);document.getElementById('lg').addEventListener('click',function(){set(document.documentElement.lang==='fr'?'en':'fr')});
 })();
-</script></body></html>
+</script><script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){})});</script></body></html>
