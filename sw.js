@@ -1,7 +1,7 @@
 /* Hors ligne pour la carte et les présentations (salons, mauvais réseau).
    Pages : réseau d'abord (3 s max), copie locale sinon. Fichiers statiques : copie locale, rafraîchie en fond.
    Ne touche ni à l'accueil chiffré, ni au formulaire, ni à rien hors du site. */
-var V = 'fx-hors-ligne-20261117a';
+var V = 'fx-hors-ligne-20261117b';
 var PAGES = ['/carte/', '/presentation/pme/', '/presentation/eti/', '/presentation/ia/',
   '/en/presentation/pme/', '/en/presentation/eti/', '/en/presentation/ia/'];
 var FICHIERS = ['/presentation/cartes.css', '/presentation/cartes.js', '/assets/integre.js', '/assets/langue.js',
@@ -12,7 +12,8 @@ var FICHIERS = ['/presentation/cartes.css', '/presentation/cartes.js', '/assets/
   '/assets/pictos/calendar.svg', '/assets/pictos/case-round.svg', '/assets/pictos/cpu-bolt.svg',
   '/assets/pictos/document-text.svg', '/assets/pictos/global.svg', '/assets/pictos/graph-up.svg',
   '/assets/pictos/letter.svg', '/assets/pictos/link-round-angle.svg', '/assets/pictos/restart.svg',
-  '/assets/pictos/rocket-2.svg', '/assets/pictos/users-group-two-rounded.svg', '/assets/pictos/wallet-money.svg'];
+  '/assets/pictos/rocket-2.svg', '/assets/pictos/shield-check.svg', '/assets/pictos/code-square.svg', '/assets/pictos/stop-circle.svg',
+  '/assets/pictos/users-group-two-rounded.svg', '/assets/pictos/wallet-money.svg'];
 var GARDE = PAGES.concat(FICHIERS);
 
 self.addEventListener('install', function (e) {
