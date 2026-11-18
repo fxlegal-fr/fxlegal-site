@@ -98,7 +98,7 @@ body.ov-on{overflow:hidden}
   if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(fin,function(){prompt('',u)});else prompt('',u);});
  /* Comptage sans cookie ni identifiant : une ligne dans l'onglet « Visites » du CRM. */
  try{var sr=(new URLSearchParams(location.search).get('src')||'qr').slice(0,40).replace(/[^\w-]/g,'');
-  new Image().src='https://script.google.com/macros/s/AKfycbwdddYYDbGJyHZjcldpZf21HN1JpkNsdoru0yGUDDjxxl5FdFuUmSDpTWBEpRS5LJSJ2w/exec?hit=carte&src='+sr+'&lang='+l+'&t='+Date.now();}catch(x){}
+  if(localStorage.getItem('fx-moi')!=='1')new Image().src='https://script.google.com/macros/s/AKfycbwdddYYDbGJyHZjcldpZf21HN1JpkNsdoru0yGUDDjxxl5FdFuUmSDpTWBEpRS5LJSJ2w/exec?hit=carte&src='+sr+'&lang='+l+'&t='+Date.now();}catch(x){}
  /* QR plein écran : un appui ouvre, un appui n'importe où ferme. L'écran reste allumé si possible. */
  var qv=document.getElementById('qrv'),wl=null;
  document.getElementById('qrb').addEventListener('click',function(){qv.classList.add('on');try{navigator.wakeLock&&navigator.wakeLock.request('screen').then(function(w){wl=w},function(){})}catch(x){}});
