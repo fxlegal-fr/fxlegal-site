@@ -2,6 +2,12 @@
    Choix mémorisé 6 mois. Lien « Cookies » (id fx-cookies) : rouvre le choix. */
 (function(){
   var ID='GTM-W6F64BNR',K='fx-consent',DUREE=182*864e5;
+  /* Appareils du propriétaire du site : ouvrir une fois une page avec ?moi=1 (annuler : ?moi=0).
+     Sur ces appareils, aucune mesure d'audience, pas de bandeau, et le module de l'accueil n'enregistre pas les messages. */
+  var M='fx-moi',moi=false;
+  try{var q=new URLSearchParams(location.search).get('moi');if(q==='1')localStorage.setItem(M,'1');if(q==='0')localStorage.removeItem(M);moi=localStorage.getItem(M)==='1';
+    if(q==='1'||q==='0'){document.addEventListener('DOMContentLoaded',function(){var n=document.createElement('div');n.textContent=q==='1'?'Appareil exclu de la mesure d’audience':'Appareil de nouveau mesuré';n.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:#F6F2FA;color:#07040B;font:700 14px Outfit,system-ui,sans-serif;border-radius:999px;padding:10px 18px';document.body.appendChild(n);setTimeout(function(){n.remove()},6000);});}
+  }catch(e){}
   var en=(document.documentElement.lang||'fr').indexOf('en')===0;
   var T=en?{t:'This site uses audience measurement cookies (Google) to understand how it is used. Nothing is set without your consent.',o:'Accept',n:'Decline',m:'Learn more',u:'/en/legal/'}
           :{t:'Ce site utilise des cookies de mesure d’audience (Google) pour comprendre comment il est consulté. Rien n’est déposé sans votre accord.',o:'Accepter',n:'Refuser',m:'En savoir plus',u:'/mentions/'};
@@ -24,6 +30,7 @@
     document.body.appendChild(d);
   }
   function go(){
+    if(moi)return;
     var c=lire();if(c==='oui')gtm();else if(c===null)bandeau();
     var l=document.getElementById('fx-cookies');if(l)l.addEventListener('click',function(e){e.preventDefault();try{localStorage.removeItem(K)}catch(x){}bandeau();});
   }
