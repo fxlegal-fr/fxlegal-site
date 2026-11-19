@@ -1,7 +1,7 @@
 /* Hors ligne pour la carte et les présentations (salons, mauvais réseau).
    Pages : réseau d'abord (3 s max), copie locale sinon. Fichiers statiques : copie locale, rafraîchie en fond.
    Ne touche ni à l'accueil chiffré, ni au formulaire, ni à rien hors du site. */
-var V = 'fx-hors-ligne-20261118a';
+var V = 'fx-hors-ligne-20261119a';
 var PAGES = ['/carte/', '/presentation/pme/', '/presentation/eti/', '/presentation/ia/',
   '/en/presentation/pme/', '/en/presentation/eti/', '/en/presentation/ia/'];
 var FICHIERS = ['/presentation/cartes.css', '/presentation/cartes.js', '/assets/integre.js', '/assets/langue.js',
