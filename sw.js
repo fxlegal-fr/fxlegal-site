@@ -1,9 +1,9 @@
 /* Hors ligne pour la carte et les présentations (salons, mauvais réseau).
    Pages : réseau d'abord (3 s max), copie locale sinon. Fichiers statiques : copie locale, rafraîchie en fond.
    Ne touche ni à l'accueil chiffré, ni au formulaire, ni à rien hors du site. */
-var V = 'fx-hors-ligne-20261119a';
-var PAGES = ['/carte/', '/presentation/pme/', '/presentation/eti/', '/presentation/ia/',
-  '/en/presentation/pme/', '/en/presentation/eti/', '/en/presentation/ia/'];
+var V = 'fx-hors-ligne-20261123a';
+var PAGES = ['/carte/', '/en/card/', '/presentation/ia/', '/presentation/fonds/',
+  '/en/presentation/ia/', '/en/presentation/fonds/'];
 var FICHIERS = ['/presentation/cartes.css', '/presentation/cartes.js', '/assets/integre.js', '/assets/langue.js',
   '/assets/fonts/Outfit-Regular.ttf', '/assets/fonts/Outfit-Bold.ttf', '/assets/img/fx-portrait.jpg',
   '/assets/logo/fx-logo.svg', '/assets/fx-le-gal.vcf', '/favicon.ico', '/icone-app-180.png',

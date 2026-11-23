@@ -1,7 +1,7 @@
 /* Langue : un navigateur qui n'est pas en français est envoyé vers la version anglaise de la page.
    Un choix manuel (?lang=fr ou ?lang=en, posé par les liens FR / EN) est retenu sur cet appareil. */
 (function(){try{
- var M={'/':'/en/','/eti/':'/en/midsize/','/ai-build-run/':'/en/ai-build-run/','/offre/':'/en/offer/','/fonds/':'/en/fonds/','/mentions/':'/en/legal/','/presentation/pme/':'/en/presentation/pme/','/presentation/eti/':'/en/presentation/eti/','/presentation/ia/':'/en/presentation/ia/'};
+ var M={'/':'/en/','/eti/':'/en/midsize/','/ai-build-run/':'/en/ai-build-run/','/offre/':'/en/offer/','/fonds/':'/en/funds/','/mentions/':'/en/legal/','/presentation/pme/':'/en/presentation/pme/','/presentation/eti/':'/en/presentation/eti/','/presentation/ia/':'/en/presentation/ia/'};
  var q=new URLSearchParams(location.search),c=q.get('lang'),S=null;
  try{S=window.localStorage}catch(e){}
  if(S&&(c==='fr'||c==='en'))try{S.setItem('fx-lang',c)}catch(e){}
