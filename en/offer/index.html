@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get the brochure · François-Xavier Le Gal</title>
+<meta name="description" content="Fractional Head of AI Transformation: higher margins, less wasted time. Get the brochure as a PDF.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07040B">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/icone-app-180.png">
+<link rel="preload" href="/assets/fonts/Outfit-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<!-- SETTING: Google script URL (step 3 of the guide), same as the French page. -->
+<script>window.FX_ENDPOINT = "https://script.google.com/macros/s/AKfycbwdddYYDbGJyHZjcldpZf21HN1JpkNsdoru0yGUDDjxxl5FdFuUmSDpTWBEpRS5LJSJ2w/exec";</script>
+<style>
+@font-face{font-family:"Outfit";src:url(/assets/fonts/Outfit-Regular.ttf) format("truetype");font-display:swap}
+@font-face{font-family:"Outfit";font-weight:700;src:url(/assets/fonts/Outfit-Bold.ttf) format("truetype");font-display:swap}
+:root{
+  --bg:#07040B;--txt:#F6F2FA;--card-txt:#E4DCEE;--mut:#B9AFC6;--acc:#B8A6FF;--foot:#7A6F88;
+  --g:linear-gradient(90deg,#8A68F0,#C73D76 58%,#AB1F38);
+  --gd:linear-gradient(120deg,#33248F,#5E1A7A 48%,#7E1232);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{min-height:100vh;background:var(--bg);color:var(--txt);font-family:"Outfit",system-ui,sans-serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+body::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+ radial-gradient(700px 560px at 92% 4%,rgba(96,40,190,.30),transparent 62%),
+ radial-gradient(700px 520px at 0% 100%,rgba(84,44,180,.22),transparent 62%),
+ radial-gradient(420px 300px at 55% -12%,rgba(60,90,255,.12),transparent 60%)}
+.wrap{position:relative;max-width:1120px;margin:0 auto;padding:28px 16px 40px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+header img{height:30px;width:auto;display:block}@media(min-width:900px){header img{height:38px}}
+.label{font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+.grid{display:grid;gap:36px}
+@media(min-width:900px){.grid{grid-template-columns:1fr 480px;gap:64px;align-items:start}.wrap{padding:40px 40px 48px}header{margin-bottom:72px}}
+h1{font-weight:700;letter-spacing:-.028em;line-height:1.06;font-size:clamp(36px,7.4vw,58px);margin:14px 0 18px}
+.grad{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:clamp(17px,2.2vw,20px);max-width:34em}
+.inside{list-style:none;margin-top:30px;display:grid;gap:14px}
+.inside li{display:flex;gap:14px;align-items:center;color:var(--card-txt)}
+.ic{width:46px;height:46px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(150,125,255,.12);border:1px solid rgba(150,125,255,.25)}
+.ic img{width:24px;height:24px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:26px 20px}
+@media(min-width:480px){.card{padding:32px 30px}}
+.card h2{font-size:24px;letter-spacing:-.02em;line-height:1.2;margin-bottom:6px}
+.card .sub{color:var(--mut);font-size:15px;margin-bottom:22px}
+.row{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;min-width:0}
+.f label,.f legend{font-size:14px;color:var(--card-txt)}
+.f .opt{color:var(--foot)}
+input[type=text],input[type=email],textarea{width:100%;font:inherit;font-size:16px;color:var(--txt);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 14px;outline:none;transition:border-color .15s,background .15s}
+textarea{resize:vertical;min-height:72px}
+input::placeholder,textarea::placeholder{color:#8A7F98}
+input:focus,textarea:focus{border-color:var(--acc);background:rgba(150,125,255,.07)}
+input[aria-invalid=true]{border-color:#C73D76}
+fieldset{border:0}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{cursor:pointer;padding:10px 12px;text-align:center;border-radius:16px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.045);font-size:15px;color:var(--card-txt);transition:all .15s;line-height:1.25}
+.chips label small{display:block;font-size:12px;color:var(--foot)}
+.chips input:checked+label{background:rgba(150,125,255,.16);border-color:rgba(150,125,255,.6);color:var(--acc)}
+.chips input:checked+label small{color:var(--card-txt)}
+.chips input:focus-visible+label{outline:2px solid var(--acc);outline-offset:2px}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--mut);margin:6px 0 12px;cursor:pointer}
+.check input{appearance:none;-webkit-appearance:none;flex:none;width:20px;height:20px;margin-top:1px;border-radius:6px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.04);display:grid;place-items:center;cursor:pointer}
+.check input:checked{background:var(--acc);border-color:var(--acc)}
+.check input:checked::after{content:"";width:10px;height:6px;border-left:2px solid var(--bg);border-bottom:2px solid var(--bg);transform:translateY(-1px) rotate(-45deg)}
+.check input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+button{margin-top:10px;width:100%;border:0;border-radius:999px;padding:16px 26px;font:inherit;font-weight:700;font-size:18px;color:#fff;background:var(--gd);cursor:pointer;transition:filter .15s,transform .05s}
+button:hover{filter:brightness(1.12)}
+button:active{transform:translateY(1px)}
+button[disabled]{opacity:.6;cursor:wait}
+.legal{margin-top:16px;font-size:12.5px;line-height:1.5;color:var(--foot)}
+.legal a{color:var(--mut)}
+.msg{display:none;margin-top:14px;font-size:15px;border-radius:14px;padding:12px 14px}
+.msg.err{display:block;color:var(--card-txt);border:1px solid rgba(199,61,118,.55);background:rgba(199,61,118,.08)}
+.done{display:none;text-align:left}
+.done h2{font-size:28px;margin-bottom:10px}
+.done p{color:var(--mut)}
+.done .ic{margin-bottom:18px}
+footer{position:relative;max-width:1120px;margin:0 auto;padding:18px 16px 28px;color:var(--foot);font-size:13px;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;border-top:1px solid rgba(255,255,255,.08)}
+@media(min-width:900px){footer{padding:18px 40px 28px}}
+footer a{color:var(--foot)}
+.lang{font-size:14px;font-weight:700;letter-spacing:.06em;color:var(--foot)}.lang b{color:var(--acc)}.lang a{color:var(--mut);text-decoration:none}.lang a:hover{color:var(--txt)}
+</style>
+<script src="/assets/consent.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="/en/" aria-label="Home"><img src="/assets/logo/fx-logo.svg" alt="fx."></a>
+    <span class="lang"><a href="/offre/?lang=fr" hreflang="fr" lang="fr">FR</a> · <b>EN</b></span>
+  </header>
+
+  <div class="grid">
+    <section>
+      <p class="label">Fractional Head of AI Transformation</p>
+      <h1>AI in your company,<br><span class="grad">where it pays</span></h1>
+      <p class="lead">Higher margins, less wasted time, a few days a month. Leave your email and I’ll send you my offer as a PDF, in the version made for your company.</p>
+      <ul class="inside">
+        <li><span class="ic"><img src="/assets/pictos/case-round.svg" alt=""></span>My ways of working</li>
+        <li><span class="ic"><img src="/assets/pictos/document-text.svg" alt=""></span>Real cases from my track record</li>
+        <li><span class="ic"><img src="/assets/pictos/calendar.svg" alt=""></span>How we get started: a written proposal within 48 hours</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-live="polite">
+      <form id="f" novalidate>
+        <h2>Get the brochure</h2>
+        <p class="sub">A 12-page PDF and its three appendices, by email.</p>
+
+        <div class="row">
+          <div class="f"><label for="prenom">First name</label><input type="text" id="prenom" name="prenom" autocomplete="given-name" required maxlength="80"></div>
+          <div class="f"><label for="nom">Last name</label><input type="text" id="nom" name="nom" autocomplete="family-name" required maxlength="80"></div>
+        </div>
+        <div class="f"><label for="email">Work email</label><input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="160"></div>
+        <div class="f"><label for="societe">Company</label><input type="text" id="societe" name="societe" autocomplete="organization" required maxlength="120"></div>
+
+        <fieldset class="f">
+          <legend>Your company (employees)</legend>
+          <div class="chips">
+            <input type="radio" name="profil" id="p-pme" value="PME" required><label for="p-pme">SME<small>under 250</small></label>
+            <input type="radio" name="profil" id="p-eti" value="ETI"><label for="p-eti">Mid-size<small>250 to 5,000</small></label>
+            <input type="radio" name="profil" id="p-autre" value="Autre"><label for="p-autre">Other<small>other case</small></label>
+          </div>
+        </fieldset>
+
+        <div class="f"><label for="sujet">What’s on your mind <span class="opt">(optional)</span></label><textarea id="sujet" name="sujet" maxlength="500" placeholder="E.g. our quotes take days, I don’t know my margin per deal…"></textarea></div>
+
+        <div class="hp" aria-hidden="true"><label for="site_web">Leave empty</label><input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off"></div>
+
+        <label class="check"><input type="checkbox" name="consent_envoi" id="consent_envoi" required><span>I agree that François-Xavier Le Gal may use this information to send me his offer and follow up with me about it.</span></label>
+        <label class="check"><input type="checkbox" name="consent_nouvelles" id="consent_nouvelles"><span>I’d also like to receive his new articles, at most once a month.</span></label>
+
+        <button type="submit" id="btn">Get the brochure</button>
+        <div class="msg" id="msg" role="alert"></div>
+
+        <p class="legal">This information is used only to send you the offer and follow up on your request. It is never sold or shared, and is kept for 3 years at most. To see it or have it deleted, write to <a href="mailto:fx@fxlegal.fr">fx@fxlegal.fr</a>.</p>
+      </form>
+
+      <div class="done" id="done">
+        <span class="ic"><img src="/assets/pictos/document-text.svg" alt=""></span>
+        <h2>Thank you, <span id="d-prenom"></span>.</h2>
+        <p id="d-txt">The brochure will reach your inbox in a few minutes. Please check your spam folder too.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <span>François-Xavier Le Gal · Nantes · France · International</span>
+  <span><a href="/en/">fxlegal.fr</a> · <a href="/en/legal/">Legal notice and privacy</a> · Icons: Solar by 480 Design, CC BY 4.0</span>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('f'),btn=document.getElementById('btn'),msg=document.getElementById('msg');
+  var t0=Date.now();
+  var src=(new URLSearchParams(location.search).get('src')||'direct').slice(0,40).replace(/[^\w-]/g,'');
+
+  function err(t){msg.textContent=t;msg.className='msg err';}
+  function val(n){var e=f.elements[n];return e&&e.value?e.value.trim():'';}
+
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();msg.className='msg';
+    var bad=[];
+    ['prenom','nom','email','societe'].forEach(function(n){
+      var e=f.elements[n],ok=!!val(n)&&(n!=='email'||/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val(n)));
+      e.setAttribute('aria-invalid',ok?'false':'true');if(!ok)bad.push(n);
+    });
+    if(bad.length){err("Please fill in first name, last name, email and company.");f.elements[bad[0]].focus();return;}
+    if(!f.querySelector('input[name=profil]:checked')){err("Please choose your company size: SME, mid-size or other.");return;}
+    if(!f.elements.consent_envoi.checked){err("Please tick the first box so I can send you the brochure.");return;}
+    if(!/^https:\/\/script\.google\.com\//.test(window.FX_ENDPOINT||'')){err("This form is not connected yet. Please write to fx@fxlegal.fr.");return;}
+
+    var data={prenom:val('prenom'),nom:val('nom'),email:val('email'),societe:val('societe'),
+      profil:f.querySelector('input[name=profil]:checked').value,sujet:val('sujet'),
+      consent_envoi:true,consent_nouvelles:f.elements.consent_nouvelles.checked,
+      lang:document.documentElement.lang,source:src,site_web:val('site_web'),duree_ms:Date.now()-t0};
+
+    btn.disabled=true;btn.textContent='Sending…';
+    fetch(window.FX_ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)})
+      .then(function(r){return r.json();})
+      .then(function(r){
+        if(!r||!r.ok)throw new Error(r&&r.error||'erreur');
+        document.getElementById('d-prenom').textContent=data.prenom;
+        if(r.message)document.getElementById('d-txt').textContent=r.message;
+        f.style.display='none';document.getElementById('done').style.display='block';
+      })
+      .catch(function(){
+        btn.disabled=false;btn.textContent="Get the brochure";
+        err("Something went wrong. Please try again in a moment, or write to fx@fxlegal.fr.");
+      });
+  });
+})();
+</script>
+<script>(function(){var p=new URLSearchParams(location.search).get("profil");if(["PME","ETI","Autre"].indexOf(p)>=0){var r=document.querySelector('input[name="profil"][value="'+p+'"]');if(r){r.checked=true;r.dispatchEvent(new Event("change",{bubbles:true}));}}
+if(p==="ETI"){var q=function(s){return document.querySelector(s)};q(".label").textContent="IT, digital and marketing leaders of mid-size companies";q("h1").innerHTML="A peer at your side, <span class=\"grad\">not one more consulting firm</span>";q(".lead").textContent="I work alongside IT, digital and marketing leaders to make the calls, deliver your projects and put AI into production. Leave your email and I’ll send you my offer as a PDF, in its mid-size version.";}})();</script>
+<script src="/assets/integre.js?v=20261117a"></script>
+</body>
+</html>
