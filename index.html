@@ -641,6 +641,7 @@ html{scroll-padding-top:84px}
 @media (prefers-reduced-motion:reduce){#fleche-bas svg{animation:none}}
 
 </style>
+<style id="retour-fonds-css">.retour-fonds{display:inline-flex;align-items:center;gap:6px;font-size:14px;line-height:1;color:#B8A6FF;text-decoration:none;border:1px solid rgba(184,166,255,.35);border-radius:999px;padding:8px 14px;white-space:nowrap}.retour-fonds{position:fixed;left:max(16px,calc(50% - 580px));top:96px;z-index:45;background:#07040B}.retour-fonds:hover{background:#1a1424}@media (max-width:700px){.retour-fonds{top:84px;font-size:13px;padding:7px 12px}}</style>
 </head>
 <body>
 
@@ -1262,5 +1263,6 @@ function bas(){return window.innerHeight+window.scrollY>=document.documentElemen
 function arme(){clearTimeout(t);b.classList.remove('on');t=setTimeout(function(){if(window.scrollY<60&&!bas()&&!document.querySelector('.panneau'))b.classList.add('on')},5000)}
 ['scroll','wheel','touchstart','keydown','mousedown'].forEach(function(e){window.addEventListener(e,arme,{passive:true})});
 b.addEventListener('click',function(){var h=document.querySelector('header'),o=h?Math.max(0,h.getBoundingClientRect().bottom):0,l=document.querySelectorAll('section[id]:not([hidden]),#temoignages'),c=null;for(var i=0;i<l.length;i++){if(!l[i].offsetHeight)continue;var r=l[i].getBoundingClientRect().top;if(r>o+40){c=r;break}}if(c===null){window.scrollBy({top:window.innerHeight*0.8,behavior:'smooth'});return}window.scrollTo({top:window.scrollY+c-o-8,behavior:'smooth'})});arme();})();</script>
+<script id="retour-fonds-js">(function(){var v;try{v=sessionStorage.getItem("fx-vu-fonds")}catch(e){}if(!v)return;var r=document.querySelector(".top .right");if(!r)return;var a=document.createElement("a");a.className="retour-fonds";a.href="/fonds/";a.textContent="← Offre fonds";document.body.appendChild(a)})();</script>
 </body>
 </html>
