@@ -86,6 +86,7 @@ footer a{color:var(--foot)}
 </style>
 <script src="/assets/consent.js" defer></script>
 <style id="surtitre-aere">p.label+h1,p.label+h2{margin-top:12px}</style>
+<style id="priorite-css">.chips.c2{grid-template-columns:repeat(2,1fr)}</style>
 </head>
 <body>
 <div class="wrap">
@@ -124,6 +125,14 @@ footer a{color:var(--foot)}
             <input type="radio" name="profil" id="p-pme" value="PME" required><label for="p-pme">SME<small>under 250</small></label>
             <input type="radio" name="profil" id="p-eti" value="ETI"><label for="p-eti">Mid-size<small>250 to 5,000</small></label>
             <input type="radio" name="profil" id="p-autre" value="Autre"><label for="p-autre">Other<small>other case</small></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="f" id="fs-offre">
+          <legend>Your priority</legend>
+          <div class="chips c2">
+            <input type="radio" name="offre" id="o-ia" value="IA"><label for="o-ia">Put AI to work<small>where it pays</small></label>
+            <input type="radio" name="offre" id="o-coo" value="COO"><label for="o-coo">Strengthen operations<small>fractional COO</small></label>
           </div>
         </fieldset>
 
@@ -172,11 +181,12 @@ footer a{color:var(--foot)}
     });
     if(bad.length){err("Please fill in first name, last name, email and company.");f.elements[bad[0]].focus();return;}
     if(!f.querySelector('input[name=profil]:checked')){err("Please choose your company size: SME, mid-size or other.");return;}
+    if(!window.FX_OFFRE&&!f.querySelector('input[name=offre]:checked')){err("Please choose your priority: AI or operations.");return;}
     if(!f.elements.consent_envoi.checked){err("Please tick the first box so I can send you the brochure.");return;}
     if(!/^https:\/\/script\.google\.com\//.test(window.FX_ENDPOINT||'')){err("This form is not connected yet. Please write to fx@fxlegal.fr.");return;}
 
     var data={prenom:val('prenom'),nom:val('nom'),email:val('email'),societe:val('societe'),
-      profil:f.querySelector('input[name=profil]:checked').value,sujet:val('sujet'),
+      profil:f.querySelector('input[name=profil]:checked').value,offre:window.FX_OFFRE||(f.querySelector('input[name=offre]:checked')||{}).value||'',sujet:val('sujet'),
       consent_envoi:true,consent_nouvelles:f.elements.consent_nouvelles.checked,
       lang:document.documentElement.lang,source:src,site_web:val('site_web'),duree_ms:Date.now()-t0};
 
