@@ -62,15 +62,13 @@ body.ov-on{overflow:hidden}
 <div class="card">
 <div class="id"><img class="ph" src="/assets/img/fx-portrait.jpg" alt="François-Xavier Le Gal">
 <div><h1>François-Xavier Le&nbsp;Gal</h1>
-<div class="role" data-fr="Business · Opérations · Tech · IA" data-en="Business · Operations · Tech · AI">Business · Opérations · Tech · IA</div></div></div>
-<p class="pitch" data-fr="Votre entreprise a grandi plus vite que son organisation. Vous gardez la vision, je prends l’exécution." data-en="Your company has grown faster than its organisation. You keep the vision, I take on execution.">Votre entreprise a grandi plus vite que son organisation. Vous gardez la vision, je prends l’exécution.</p>
-<div class="gf"><span><img src="/assets/pictos/calendar.svg" alt=""><i data-fr="Quelques jours par mois" data-en="A few days a month">Quelques jours par mois</i></span><span><img src="/assets/pictos/restart.svg" alt=""><i data-fr="Missions de 3 mois" data-en="3-month engagements">Missions de 3 mois</i></span><span><img src="/assets/pictos/global.svg" alt=""><i data-fr="France et international" data-en="France and abroad">France et international</i></span></div>
+<div class="role" data-fr="Business · Opérations · Tech · IA · International" data-en="Business · Operations · Tech · AI · International">Business · Opérations · Tech · IA · International</div></div></div>
+<p class="pitch" data-fr="L’IA dans votre entreprise, là où elle rapporte : plus de marge, moins de temps perdu." data-en="AI in your company, where it pays: higher margins, less wasted time.">L’IA dans votre entreprise, là où elle rapporte : plus de marge, moins de temps perdu.</p>
 <div class="choose"><div class="t" data-fr="Découvrir en 2 minutes" data-en="Discover in 2 minutes">Découvrir en 2 minutes</div>
 <div class="pick">
-<a href="/presentation/pme/" data-h-fr="/presentation/pme/" data-h-en="/en/presentation/pme/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="PME" data-en="SME">PME</b><span data-fr="Vous dirigez une PME tech ou de services" data-en="You run a tech or services SME">Vous dirigez une PME tech ou de services</span></a>
-<a href="/presentation/eti/" data-h-fr="/presentation/eti/" data-h-en="/en/presentation/eti/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="ETI" data-en="Mid-size">ETI</b><span data-fr="Vous êtes en direction IT, digitale ou marketing" data-en="You lead IT, digital or marketing">Vous êtes en direction IT, digitale ou marketing</span></a>
+<a href="/presentation/ia/" data-h-fr="/presentation/ia/" data-h-en="/en/presentation/ia/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="Dirigeants" data-en="Leaders">Dirigeants</b><span data-fr="Direction IA à temps partagé" data-en="Fractional Head of AI">Direction IA à temps partagé</span></a>
+<a href="/presentation/fonds/" data-h-fr="/presentation/fonds/" data-h-en="/en/presentation/fonds/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="Fonds" data-en="Funds">Fonds</b><span data-fr="Operating partner à temps partagé" data-en="Fractional operating partner">Operating partner à temps partagé</span></a>
 </div>
-<div class="pick one"><a href="/presentation/ia/" data-h-fr="/presentation/ia/" data-h-en="/en/presentation/ia/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="IA en production" data-en="AI in production">IA en production</b><span data-fr="Cadrer, prouver, déployer, transmettre" data-en="Scope, prove, deploy, hand over">Cadrer, prouver, déployer, transmettre</span></a></div>
 </div>
 <a class="btn p" id="deck" href="/offre/?src=wallet" data-h-fr="/offre/?src=wallet" data-h-en="/en/offer/?src=wallet"><img src="/assets/pictos/document-text.svg" alt=""><span data-fr="Recevoir l’offre en PDF" data-en="Get the brochure (PDF)">Recevoir l’offre en PDF</span></a>
 <a class="btn s" href="https://calendar.app.google/ik41pcP1CtoXp9d7A" target="_blank" rel="noopener"><img src="/assets/pictos/calendar.svg" alt=""><span data-fr="Réserver 30 minutes" data-en="Book 30 minutes">Réserver 30 minutes</span></a>
@@ -90,12 +88,14 @@ body.ov-on{overflow:hidden}
  function set(l){document.documentElement.lang=l;
   document.querySelectorAll('[data-fr]').forEach(function(e){e.textContent=e.getAttribute('data-'+l)});
   document.querySelectorAll('[data-h-fr]').forEach(function(e){e.setAttribute('href',e.getAttribute('data-h-'+l))});
-  document.getElementById('lg').textContent=l==='fr'?'EN':'FR';document.getElementById('sh').setAttribute('aria-label',l==='fr'?'Partager':'Share');}
+  document.getElementById('lg').textContent=l==='fr'?'EN':'FR';
+  /* 23/11 : adresse dans la langue affichée (/carte/ ou /en/card/), sans recharger. Le QR imprimé (/carte/) reste valable. */
+  try{var u=(l==='en'?'/en/card/':'/carte/');if(location.pathname!==u)history.replaceState(history.state,'',u+location.search.replace(/([?&])lang=(en|fr)&?/,'$1').replace(/[?&]$/,'')+location.hash)}catch(x){}document.getElementById('sh').setAttribute('aria-label',l==='fr'?'Partager':'Share');}
  var q=new URLSearchParams(location.search).get('lang');
- var l=q==='en'||q==='fr'?q:((navigator.language||'fr').toLowerCase().indexOf('fr')===0?'fr':'en');
+ var l=q==='en'||q==='fr'?q:(location.pathname.indexOf('/en/')===0?'en':((navigator.language||'fr').toLowerCase().indexOf('fr')===0?'fr':'en'));
  /* Partage : menu de partage du téléphone, sinon copie du lien. */
  var toast=document.body.appendChild(document.createElement('div'));toast.className='toast';
- document.getElementById('sh').addEventListener('click',function(){var fr=document.documentElement.lang==='fr',u=location.origin+'/carte/'+(fr?'':'?lang=en');
+ document.getElementById('sh').addEventListener('click',function(){var fr=document.documentElement.lang==='fr',u=location.origin+(fr?'/carte/':'/en/card/');
   if(navigator.share){navigator.share({title:document.title,url:u}).catch(function(){});return}
   var fin=function(){toast.textContent=fr?'Lien copié':'Link copied';toast.classList.add('on');setTimeout(function(){toast.classList.remove('on')},1800)};
   if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(fin,function(){prompt('',u)});else prompt('',u);});
