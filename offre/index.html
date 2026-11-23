@@ -87,6 +87,7 @@ footer a{color:var(--foot)}
 <script src="/assets/consent.js" defer></script>
 <style id="surtitre-aere">p.label+h1,p.label+h2{margin-top:12px}</style>
 <style id="priorite-css">.chips.c2{grid-template-columns:repeat(2,1fr)}</style>
+<style id="sans-taille">fieldset.f:has(input[name="profil"]){display:none!important}</style>
 </head>
 <body>
 <div class="wrap">
@@ -214,5 +215,6 @@ var q=function(x){return document.querySelector(x)};q(".label").textContent="Fon
 q(".lead").textContent="Je tiens le rôle de COO aux côtés du dirigeant : un pair, pas le contrôleur de l’actionnaire. Laissez votre adresse : je vous envoie mon offre pour vos participations, en PDF.";
 q("#fs-offre").style.display="none";var r=q('input[name="profil"][value="Autre"]');if(r){r.checked=true;r.closest("fieldset").style.display="none";}
 var t=q("#sujet");if(t)t.placeholder="Ex. : une participation où tout remonte encore au dirigeant…";})();</script>
+<script id="sans-taille-js">(function(){if(!document.querySelector('input[name="profil"]:checked')){var r=document.querySelector('input[name="profil"][value="Autre"]');if(r)r.checked=true;}})();</script>
 </body>
 </html>
