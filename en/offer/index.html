@@ -211,5 +211,10 @@ footer a{color:var(--foot)}
 if(p==="ETI"){var q=function(s){return document.querySelector(s)};q(".label").textContent="IT, digital and marketing leaders of mid-size companies";q("h1").innerHTML="A peer at your side, <span class=\"grad\">not one more consulting firm</span>";q(".lead").textContent="I work alongside IT, digital and marketing leaders to make the calls, deliver your projects and put AI into production. Leave your email and I’ll send you my offer as a PDF, in its mid-size version.";}})();</script>
 <script src="/assets/integre.js?v=20261117a"></script>
 <script id="sans-taille-js">(function(){if(!document.querySelector('input[name="profil"]:checked')){var r=document.querySelector('input[name="profil"][value="Autre"]');if(r)r.checked=true;}})();</script>
+<script id="mode-fonds">(function(){var s=(new URLSearchParams(location.search).get("src")||"");if(s.indexOf("fonds")!==0)return;window.FX_OFFRE="Fonds";
+var q=function(x){return document.querySelector(x)};q(".label").textContent="Funds and family offices";q("h1").innerHTML="Fractional operating partner <span class=\"grad\">for your portfolio companies</span>";
+q(".lead").textContent="I act as COO alongside the CEO: a peer, not the shareholder’s auditor. Leave your address and I will send you my offer for your portfolio companies, as a PDF.";
+q("#fs-offre").style.display="none";var r=q('input[name="profil"][value="Autre"]');if(r){r.checked=true;r.closest("fieldset").style.display="none";}
+var t=q("#sujet");if(t)t.placeholder="E.g. a portfolio company where everything still goes up to the CEO…";})();</script>
 </body>
 </html>
