@@ -86,6 +86,7 @@ footer a{color:var(--foot)}
 </style>
 <script src="/assets/consent.js" defer></script>
 <style id="surtitre-aere">p.label+h1,p.label+h2{margin-top:12px}</style>
+<style id="priorite-css">.chips.c2{grid-template-columns:repeat(2,1fr)}</style>
 </head>
 <body>
 <div class="wrap">
@@ -124,6 +125,14 @@ footer a{color:var(--foot)}
             <input type="radio" name="profil" id="p-pme" value="PME" required><label for="p-pme">PME<small>moins de 250</small></label>
             <input type="radio" name="profil" id="p-eti" value="ETI"><label for="p-eti">ETI<small>250 à 5 000</small></label>
             <input type="radio" name="profil" id="p-autre" value="Autre"><label for="p-autre">Autre<small>autre cas</small></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="f" id="fs-offre">
+          <legend>Votre priorité</legend>
+          <div class="chips c2">
+            <input type="radio" name="offre" id="o-ia" value="IA"><label for="o-ia">Mettre l’IA au travail<small>là où elle rapporte</small></label>
+            <input type="radio" name="offre" id="o-coo" value="COO"><label for="o-coo">Renforcer la direction<small>des opérations (COO)</small></label>
           </div>
         </fieldset>
 
@@ -172,11 +181,12 @@ footer a{color:var(--foot)}
     });
     if(bad.length){err("Merci de remplir prénom, nom, mail et société.");f.elements[bad[0]].focus();return;}
     if(!f.querySelector('input[name=profil]:checked')){err("Indiquez la taille de votre entreprise : PME, ETI ou autre.");return;}
+    if(!window.FX_OFFRE&&!f.querySelector('input[name=offre]:checked')){err("Indiquez votre priorité : l’IA ou la direction des opérations.");return;}
     if(!f.elements.consent_envoi.checked){err("Cochez la première case pour que je puisse vous envoyer l’offre.");return;}
     if(!/^https:\/\/script\.google\.com\//.test(window.FX_ENDPOINT||'')){err("Le formulaire n’est pas encore branché. Écrivez-moi à fx@fxlegal.fr.");return;}
 
     var data={prenom:val('prenom'),nom:val('nom'),email:val('email'),societe:val('societe'),
-      profil:f.querySelector('input[name=profil]:checked').value,sujet:val('sujet'),
+      profil:f.querySelector('input[name=profil]:checked').value,offre:window.FX_OFFRE||(f.querySelector('input[name=offre]:checked')||{}).value||'',sujet:val('sujet'),
       consent_envoi:true,consent_nouvelles:f.elements.consent_nouvelles.checked,
       lang:document.documentElement.lang,source:src,site_web:val('site_web'),duree_ms:Date.now()-t0};
 
@@ -199,5 +209,10 @@ footer a{color:var(--foot)}
 <script>(function(){var p=new URLSearchParams(location.search).get("profil");if(["PME","ETI","Autre"].indexOf(p)>=0){var r=document.querySelector('input[name="profil"][value="'+p+'"]');if(r){r.checked=true;r.dispatchEvent(new Event("change",{bubbles:true}));}}
 if(p==="ETI"){var q=function(s){return document.querySelector(s)};q(".label").textContent="Directions IT, numériques et marketing d’ETI";q("h1").innerHTML="Un pair à vos côtés, <span class=\"grad\">pas un cabinet de plus</span>";q(".lead").textContent="J’interviens aux côtés des directions IT, numériques et marketing pour arbitrer, livrer vos chantiers et mettre l’IA en production. Laissez votre adresse : je vous envoie mon offre en PDF, dans sa version ETI.";}})();</script>
 <script src="/assets/integre.js?v=20261117a"></script>
+<script id="mode-fonds">(function(){var s=(new URLSearchParams(location.search).get("src")||"");if(s.indexOf("fonds")!==0)return;window.FX_OFFRE="Fonds";
+var q=function(x){return document.querySelector(x)};q(".label").textContent="Fonds et family offices";q("h1").innerHTML="Operating partner à temps partagé <span class=\"grad\">pour vos participations</span>";
+q(".lead").textContent="Je tiens le rôle de COO aux côtés du dirigeant : un pair, pas le contrôleur de l’actionnaire. Laissez votre adresse : je vous envoie mon offre pour vos participations, en PDF.";
+q("#fs-offre").style.display="none";var r=q('input[name="profil"][value="Autre"]');if(r){r.checked=true;r.closest("fieldset").style.display="none";}
+var t=q("#sujet");if(t)t.placeholder="Ex. : une participation où tout remonte encore au dirigeant…";})();</script>
 </body>
 </html>
