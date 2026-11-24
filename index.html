@@ -840,7 +840,7 @@ html{scroll-padding-top:84px}
     <details id="q-outils"><summary>Travaillez-vous avec nos outils&nbsp;?</summary><p>Oui. Je pars de vos outils actuels et je n’impose aucun logiciel.</p></details>
     <details id="q-opco"><summary>La formation de nos équipes peut-elle être financée par notre OPCO&nbsp;?</summary><p>La formation de vos équipes fait partie de chaque mission, sur vos outils et vos propres cas. Une prise en charge par l’OPCO suppose que la formation soit portée par un organisme certifié Qualiopi, ce que je ne suis pas. Si ce financement compte pour vous, dites-le dès le premier échange&nbsp;: on regarde ensemble la formule possible avant de signer.</p></details>
     <details id="q-donnees"><summary>Que deviennent nos données avec l’IA&nbsp;?</summary><p>Elles restent dans votre base, chez votre hébergeur. Si un modèle d’IA externe est utilisé, vous le savez avant, et son contrat interdit la réutilisation de vos données. Chaque outil IA est testé sur vos cas réels avant d’être ouvert à l’équipe, et passe sept garde-fous avant sa mise en service. Pour chaque outil, vous savez par écrit où sont stockées vos données et dans quel pays tourne le modèle. Quand vos données l’exigent, on retient un modèle hébergé dans l’Union européenne. <a href="/offre/?src=faq-donnees">Voir le détail</a></p></details>
-    <details id="q-international"><summary>Intervenez-vous à distance et à l’international&nbsp;?</summary><p>Oui. Je suis basé à Nantes et j’interviens en France et à l’international, en français et en anglais.</p></details>
+    <details id="q-international"><summary>Intervenez-vous à distance et à l’international&nbsp;?</summary><p>Oui. Je suis basé à Nantes et j’interviens en France et à l’international, en français et en anglais. Je me déplace sur site, à Paris, en région ou à l’étranger, pour les jours prévus chaque mois.</p></details>
   </div>
 </div></section>
 </main>
@@ -889,7 +889,8 @@ html{scroll-padding-top:84px}
   // Questions fréquentes : la réponse affichée est celle de la page (FAQ), ou un texte court écrit à l'avance.
   var QUESTIONS = {
     prix: { faq: 'q-prix' }, jours: { faq: 'q-jours' }, difference: { faq: 'q-difference' }, recruter: { faq: 'q-recruter' }, arret: { faq: 'q-arret' },
-    outils: { faq: 'q-outils' }, donnees: { faq: 'q-donnees' }, international: { faq: 'q-international' },
+    outils: { faq: 'q-outils' }, donnees: { faq: 'q-donnees' }, international: { faq: 'q-international' }, opco: { faq: 'q-opco' },
+    metiers: { titre: 'Qu’est-ce que ça change pour mes équipes ?', texte: 'Pour la direction, une revue du lundi prête. Pour l’ADV, des devis préparés à partir de vos historiques : chez Manitou Group, deux fois plus rapides. Pour les commerciaux, des demandes qualifiées sous 24 heures. Pour le DAF, la marge par client chaque mois. L’objectif n’est jamais de réduire vos effectifs.', lien: '#metiers', libelle: 'Voir ce que ça change pour chacun' },
     demarrer: { titre: 'Comment on démarre ?', texte: 'Le plus souvent par un diagnostic de trois semaines, qui chiffre trois leviers. Si le besoin est déjà net, on démarre directement sur un chantier, mis en service en six à huit semaines. Les missions durent trois mois et se renouvellent après un bilan écrit.', lien: '#demarrer', libelle: 'Voir comment on démarre' },
     parcours: { titre: 'Quel est votre parcours ?', texte: '25 ans dans la tech et le digital, du code à la direction générale. J’ai été 5 ans directeur général adjoint d’un éditeur de tests automatisés et passé 4 ans aux USA chez Manitou Group.', lien: '#resultats', libelle: 'Voir les résultats et les témoignages' },
     pourqui: { titre: 'Pour quelles entreprises ?', texte: 'Je travaille avec des dirigeants de PME industrielles, de négoce et de services B2B de 10 à 50 M€ de chiffre d’affaires.', lien: '#enjeux', libelle: 'Voir les situations' },
@@ -905,6 +906,8 @@ html{scroll-padding-top:84px}
     outils: [[/(nos outils|mes outils|vos outils|logiciel|erp|hubspot|salesforce|notion|odoo|sage|pennylane|quel outil)/, 3]],
     donnees: [[/(donnees|confidential|rgpd|securite|dpo|garde-?fous?)/, 3], [/\bia\b|intelligence artificielle/, 1]],
     international: [[/(distance|teletravail|visio|international|etranger|anglais|etats-?unis|usa|europe|paris|lyon|bordeaux|rennes|nantes|deplace)/, 3]],
+    opco: [[/(opco|qualiopi|financ.* (de la |la )?formation|prise en charge)/, 5], [/(former (les|nos|mes|vos) (equipes|salaries|collaborateurs)|formez|formation (des|de nos|de vos|de mes) (equipes|salaries|collaborateurs))/, 3]],
+    metiers: [[/(effectifs|licenci|supprim.* postes?|remplacer (mes|nos|les) (equipes|salaries)|pour (mes|nos) equipes|chaque metier|par metier)/, 4], [/\b(adv|daf|rh|assistant|assistante|commerciaux|controle de gestion)\b/, 2]],
     demarrer: [[/(comment (on )?(demarre|commence|ca se passe|ca marche)|par ou commencer|premiere etape|diagnostic|quand .*(demarrer|commencer))/, 3]],
     parcours: [[/(qui etes|votre parcours|ton parcours|experience|reference|temoignage|deja fait|cv\b|background|qui es)/, 3]],
     pourqui: [[/(quelle taille|taille d.entreprise|pour qui|quel type d.entreprise|trop petit|trop gros|tpe|secteur|\b\d+ (salaries|personnes|collaborateurs))/, 3]],
