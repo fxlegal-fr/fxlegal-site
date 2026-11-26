@@ -1384,5 +1384,13 @@ function bas(){return window.innerHeight+window.scrollY>=document.documentElemen
 function arme(){clearTimeout(t);b.classList.remove('on');t=setTimeout(function(){if(window.scrollY<60&&!bas()&&!document.querySelector('.panneau'))b.classList.add('on')},5000)}
 ['scroll','wheel','touchstart','keydown','mousedown'].forEach(function(e){window.addEventListener(e,arme,{passive:true})});
 b.addEventListener('click',function(){var h=document.querySelector('header'),o=h?Math.max(0,h.getBoundingClientRect().bottom):0,l=document.querySelectorAll('section[id]:not([hidden]),#temoignages'),c=null;for(var i=0;i<l.length;i++){if(!l[i].offsetHeight)continue;var r=l[i].getBoundingClientRect().top;if(r>o+40){c=r;break}}if(c===null){window.scrollBy({top:window.innerHeight*0.8,behavior:'smooth'});return}window.scrollTo({top:window.scrollY+c-o-8,behavior:'smooth'})});arme();})();</script>
-</body>
+<script>
+/* 26/11 : une adresse en #p-… (liens des présentations) ouvre la situation : onglet sur ordinateur, carte dépliée sur téléphone. */
+addEventListener('load', function () {
+  var m = /^#(p-[a-z-]+)$/.exec(location.hash), c = m && document.getElementById(m[1]);
+  if (!c || c.tagName !== 'DETAILS') return;
+  c.open = true;
+  setTimeout(function () { var t = c.closest('.onglets-v') || c; scrollTo(0, t.getBoundingClientRect().top + scrollY - 96); }, 60);
+});
+</script></body>
 </html>
