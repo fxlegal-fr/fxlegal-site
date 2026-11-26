@@ -81,8 +81,8 @@ body.ov-on{overflow:hidden}
 </div>
 <div class="choose"><div class="t" data-fr="Découvrir en 2 minutes" data-en="Discover in 2 minutes">Découvrir en 2 minutes</div>
 <div class="pick">
-<a href="/presentation/ia/" data-h-fr="/presentation/ia/" data-h-en="/en/presentation/ia/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="Dirigeants" data-en="Leaders">Dirigeants</b><span data-fr="Direction IA à temps partagé" data-en="Fractional Head of AI">Direction IA à temps partagé</span></a>
-<a href="/presentation/fonds/" data-h-fr="/presentation/fonds/" data-h-en="/en/presentation/fonds/"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="Fonds" data-en="Funds">Fonds</b><span data-fr="Operating partner à temps partagé" data-en="Fractional operating partner">Operating partner à temps partagé</span></a>
+<a href="/?src=carte" data-h-fr="/?src=carte" data-h-en="/en/?src=carte"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="Dirigeants" data-en="Leaders">Dirigeants</b><span data-fr="Direction IA à temps partagé" data-en="Fractional Head of AI">Direction IA à temps partagé</span></a>
+<a href="/fonds/?src=carte" data-h-fr="/fonds/?src=carte" data-h-en="/en/funds/?src=carte"><i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><b data-fr="Fonds" data-en="Funds">Fonds</b><span data-fr="Operating partner à temps partagé" data-en="Fractional operating partner">Operating partner à temps partagé</span></a>
 </div>
 </div>
 <a class="btn s" id="deck" href="/offre/?src=wallet" data-h-fr="/offre/?src=wallet" data-h-en="/en/offer/?src=wallet"><img src="/assets/pictos/document-text.svg" alt=""><span data-fr="Recevoir l’offre complète" data-en="Get the full offer">Recevoir l’offre complète</span></a>
@@ -119,7 +119,7 @@ body.ov-on{overflow:hidden}
  function ouvrir(u){ov.innerHTML='';var f=document.createElement('iframe');f.src=u;f.title=document.title;f.setAttribute('allow','clipboard-write; web-share');ov.appendChild(f);
   ov.classList.add('on');document.body.classList.add('ov-on');history.pushState({ov:1},'');f.focus();}
  function fermer(){ov.classList.remove('on');document.body.classList.remove('ov-on');ov.innerHTML='';}
- [].forEach.call(document.querySelectorAll('.pick a,#deck'),function(a){a.addEventListener('click',function(e){if(e.metaKey||e.ctrlKey||e.shiftKey)return;e.preventDefault();ouvrir(a.getAttribute('href'))})});
+ [].forEach.call(document.querySelectorAll('#deck'),function(a){a.addEventListener('click',function(e){if(e.metaKey||e.ctrlKey||e.shiftKey)return;e.preventDefault();ouvrir(a.getAttribute('href'))})});
  /* « Retour » dans la page ouverte : on ferme et on neutralise l'entrée d'historique ajoutée. */
  addEventListener('message',function(e){if(e.origin===location.origin&&e.data==='fx-fermer'){fermer();if(history.state&&history.state.ov)history.replaceState(null,'')}});
  /* Geste ou bouton retour du téléphone : ferme la surimpression. */
