@@ -5,6 +5,7 @@
  var q=new URLSearchParams(location.search),c=q.get('lang'),S=null;
  try{S=window.localStorage}catch(e){}
  if(S&&(c==='fr'||c==='en'))try{S.setItem('fx-lang',c)}catch(e){}
+ if(/bot|crawl|spider|slurp|google|bing|yandex|baidu|duckduck|lighthouse|facebookexternalhit|linkedin/i.test(navigator.userAgent||''))return; /* robots : jamais de redirection, chaque langue est indexée sous sa propre URL */
  var en=M[location.pathname.replace(/index\.html$/,'')];if(!en)return;
  var choix=c;if(!choix&&S)try{choix=S.getItem('fx-lang')}catch(e){}
  if(choix==='fr')return;
